@@ -38,7 +38,7 @@ function HTMLAnswer(massage){
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Ответ формы</title>
-            <link rel="stylesheet" href="http://95.213.139.91/MyForm/answer.css">
+            <link rel="stylesheet" href="http://95.213.139.91/MyForm/style/answer.css">
         </head>
         <div class="answer">
           <p>${massage}</p>
@@ -56,7 +56,7 @@ function HTMLTables(results){
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Ответ формы</title>
-            <link rel="stylesheet" href="http://95.213.139.91/MyForm/tables.css">
+            <link rel="stylesheet" href="http://95.213.139.91/MyForm/style/tables.css">
         </head>
         <div class="answer">
             ${results.map(colum=>{
