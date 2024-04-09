@@ -1,11 +1,11 @@
 <?php
-    $flag = 1;
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $flag = 1;
         $name = $_POST["name"];
         $email = $_POST["email"];
         $number = $_POST["number"];
 
-        setcookie('email',$email,time()+86400,"/");
+        setcookie("email",$email,time()+86400,"/");
         if (preg_match('/[а-яёА-ЯЁ]+/u', $name)) {
             setcookie("name",$name,time()+86400, "/");
         } 
@@ -21,6 +21,9 @@
             $flag = 0;
         }
 
+        echo $_COOKIE["name"];
+        echo $_COOKIE["number"];
+        echo $_COOKIE["email"];
         // if($flag == 1){
         //     $options = array(
         //         'http' => array(
