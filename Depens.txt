@@ -1,0 +1,6 @@
+1) Apache
+2) Node
+3) npm
+4) pm2
+5) MySQL
+6) PHP
