@@ -8,7 +8,7 @@
     else {
         $name = 1;
     }
-    if (strlen($number)) {
+    if (strlen($number) == 11) {
         setcookie("number",$number,time()+86400, "/");
     } 
     else {
