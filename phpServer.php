@@ -6,9 +6,9 @@
         $date = $_POST['name'];
         if(preg_match('/[а-яёА-ЯЁ]+/u', $name)){
             setcookie("name",$name, time() + 86400,"/");
-            setcookie("number",$number, time() + 86400,"/");
-            setcookie("email",$email, time() + 86400,"/");
-            setcookie("date",$date, time() + 86400,"/");
+            // setcookie("number",$number, time() + 86400,"/");
+            // setcookie("email",$email, time() + 86400,"/");
+            // setcookie("date",$date, time() + 86400,"/");
         }else{
             $nameErr = $name + " -invalid Name";
         }
@@ -28,7 +28,7 @@
 </head>
 <body>
     <h1>Форма записи в базу данных</h1>
-    <form id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+    <form id="form" action="POST" method="POST">
         <div class="body">
             <div class="info">
                 <div class="input">
