@@ -27,8 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // POST TO JS SERVER
     }else{
         $values = ["name" => $name, "email" => $email, "number" => $number];
-        setcookie("error", $errors, 0, "/");
-        setcookie("values", $values, 0, "/");
+        setcookie("error", $errors, time() + 5000*20, "/");
+        setcookie("values", $values, time() + 5000*20, "/");
         header("Location: form.php");
     }
 }
