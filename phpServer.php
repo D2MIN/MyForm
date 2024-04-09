@@ -7,4 +7,6 @@
             $nameErr = "invalid Name";
         }
     }
+
+    echo "Ответ сервера ;) ";
 ?>
