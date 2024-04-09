@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="body">
             <div class="info">
                 <div class="input">
-                    <input class="<?php echo isset($errors['name']) ? 'error' : ''; ?>" name="name" id="name" type="text" value="<?= htmlspecialchars($_COOKIE["values"]["name"] ?? "") ?>" placeholder="Имя" required>
+                    <input class="<?php echo isset($errors['name']) ? 'error' : ''; ?>" name="name" id="name" type="text" value="<?= $_COOKIE["values"]["name"] ?>" placeholder="Имя" required>
                     <span class="error <?= htmlspecialchars($_COOKIE["error"]["name"] ?? "") ?>">
                         <?= htmlspecialchars($_COOKIE["error"]["name"] ?? "") ?>
                     </span>
