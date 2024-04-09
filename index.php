@@ -19,7 +19,7 @@
         else {
             $nameErr = "error";
             $flag = 0;
-            header("Location: form.php");
+            header("Location: index.php");
         }
         if (strlen($number) == 11) {
             setcookie("number",$number,time()+86400, "/");
