@@ -1,13 +1,19 @@
 <?php
-    $email = $_POST["email"];
-    $name = $_POST["name"];
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        setcookie("email", $email, time() + (86400 * 30), "/"); // 86400 = 1 day
+    $name = $_POST["email"];
+    $email = $_POST["name"];
+    $number = $_POST["name"];
+    if (preg_match('/[а-яёА-ЯЁ]+/u', $name)) {
         setcookie("name",$name,time()+86400, "/");
-    } else {
-        $emailErr = "Invalid email format";
+    } 
+    else {
+        $name = 1;
     }
-    echo $email;
+    if (strlen($number)) {
+        setcookie("number",$number,time()+86400, "/");
+    } 
+    else {
+        $number = 1;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +32,9 @@
             <div class="info">
                 <div class="input">
                     <input name="name" id="name" type="text" value="<?php echo $_COOKIE["name"]; ?>" placeholder="Имя" required>
-                    <input name="number" id="number" type="number" value="" placeholder="Номер" required>
+                    <span class="error"> <?php echo $name;?> </span>
+                    <input name="number" id="number" type="number" value="<?php echo $_COOKIE["number"]; ?>" placeholder="Номер" required>
+                    <span class="error"> <?php echo $number;?> </span>
                     <input name="email" id="email" type="email" value="<?php echo $_COOKIE["email"]; ?>" placeholder="Почта" required>
                     <input name="date" id="date" type="date" placeholder="" required>
                 </div>
