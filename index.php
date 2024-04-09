@@ -6,7 +6,7 @@
         $number = $_POST["number"];
         $date = $_POST["date"];
         $gen = $_POST["gen"];
-        $leng = $_POST["leng[]"];
+        $lengs = $_POST["leng"];
         $about = $_POST["about"];
 
         setcookie("email",$email,time()+86400,"/");
@@ -25,7 +25,7 @@
             $flag = 0;
         }
 
-        echo $leng . " - " . $about;
+        echo $lengs . " - " . $about;
 
         if($flag == 1){
             $options = array(
