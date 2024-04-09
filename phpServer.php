@@ -10,3 +10,16 @@
 
     echo "Ответ сервера ;) ";
 ?>
+
+<html>
+<body>
+
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    Email: <input type="text" name="email" value="<?php echo $_COOKIE["email"]; ?>">
+    <span class="error">* <?php echo $emailErr;?></span>
+    <br><br>
+    <input type="submit" name="submit" value="Submit">
+</form>
+
+</body>
+</html>
