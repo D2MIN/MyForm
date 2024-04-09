@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <body>
 
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<form method="post" action="./phpServer.php">
     Email: <input type="text" name="email" value="<?php echo $_COOKIE["email"]; ?>">
     <span class="error">* <?php echo $emailErr;?></span>
     <br><br>
