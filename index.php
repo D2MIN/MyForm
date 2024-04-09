@@ -1,18 +1,18 @@
 <?php
-    $name = $_POST["email"];
-    $email = $_POST["name"];
-    $number = $_POST["name"];
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $number = $_POST["number"];
     if (preg_match('/[а-яёА-ЯЁ]+/u', $name)) {
         setcookie("name",$name,time()+86400, "/");
     } 
     else {
-        $name = 1;
+        $nameErr = 1;
     }
     if (strlen($number) == 11) {
         setcookie("number",$number,time()+86400, "/");
     } 
     else {
-        $number = 1;
+        $numberErr = 1;
     }
 ?>
 
@@ -32,9 +32,9 @@
             <div class="info">
                 <div class="input">
                     <input name="name" id="name" type="text" value="<?php echo $_COOKIE["name"]; ?>" placeholder="Имя" required>
-                    <span class="error"> <?php echo $name;?> </span>
+                    <span class="error"> <?php echo $nameErr;?> </span>
                     <input name="number" id="number" type="number" value="<?php echo $_COOKIE["number"]; ?>" placeholder="Номер" required>
-                    <span class="error"> <?php echo $number;?> </span>
+                    <span class="error"> <?php echo $numberErr;?> </span>
                     <input name="email" id="email" type="email" value="<?php echo $_COOKIE["email"]; ?>" placeholder="Почта" required>
                     <input name="date" id="date" type="date" placeholder="" required>
                 </div>
