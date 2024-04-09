@@ -15,7 +15,7 @@
 <body>
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    Email: <input type="text" name="email" value="<?php echo $_COOKIE["email"]; ?>">
+    Email: <input type="text" name="name" value="<?php echo $_COOKIE["name"]; ?>">
     <span class="error">* <?php echo $emailErr;?></span>
     <br><br>
     <input type="submit" name="submit" value="Submit">
