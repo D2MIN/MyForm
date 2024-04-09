@@ -7,7 +7,6 @@
     } else {
         $emailErr = "Invalid email format";
     }
-    echo $email;
 ?>
 
 <!DOCTYPE html>
