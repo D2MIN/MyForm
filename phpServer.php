@@ -1,12 +1,10 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         setcookie("email", $email, time() + (86400 * 30), "/"); // 86400 = 1 day
     } else {
         $emailErr = "Invalid email format";
     }
-}
 ?>
 
 <!DOCTYPE html>
