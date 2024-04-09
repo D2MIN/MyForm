@@ -1,7 +1,12 @@
-.error{
+.span{
+  display: none;
+}
+
+.span .error{
+  display: block;
   background-color: rgb(255, 96, 96);
   color: white;
-  padding: 20px;
+  padding: 3px;
   border-radius: 3px;
   margin-bottom: 10px;
 }
