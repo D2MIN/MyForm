@@ -12,9 +12,8 @@
         }else{
             $nameErr = $name + " -invalid Name";
         }
+        echo $_COOKIE['name'] + " " + $_COOKIE['number'] + $_COOKIE['date'];
     }
-
-    echo "Ответ сервера ;) ";
 ?>
 
 
