@@ -1,43 +1,3 @@
-<?php
-    if ($_SERVER["REQUEST_METHOD"] == "GET") {
-        $flag = 1;
-        $name = $_POST["name"];
-        $email = $_POST["email"];
-        $number = $_POST["number"];
-
-        setcookie("email",$email,time()+86400,"/");
-        if (preg_match('/[а-яёА-ЯЁ]+/u', $name)) {
-            setcookie("name",$name,time()+86400, "/");
-        } 
-        else {
-            $nameErr = 1;
-            $flag = 0;
-        }
-        if (strlen($number) == 11) {
-            setcookie("number",$number,time()+86400, "/");
-        } 
-        else {
-            $numberErr = 1;
-            $flag = 0;
-        }
-
-        echo $_COOKIE["name"];
-        echo $_COOKIE["number"];
-        echo $_COOKIE["email"];
-        // if($flag == 1){
-        //     $options = array(
-        //         'http' => array(
-        //             'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-        //             'method'  => 'POST',
-        //             'content' => http_build_query($_POST)
-        //         )
-        //     );
-        //     $context  = stream_context_create($options);
-        //     $result = file_get_contents('http://95.213.139.91:600/tables', false, $context);
-        // }
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -100,3 +60,43 @@
     <a href="http://95.213.139.91:600/tables"><button class="button" type="submit">Таблицы</button></a>
 </body>
 </html>
+
+<?php
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        $flag = 1;
+        $name = $_POST["name"];
+        $email = $_POST["email"];
+        $number = $_POST["number"];
+
+        setcookie("email",$email,time()+86400,"/");
+        if (preg_match('/[а-яёА-ЯЁ]+/u', $name)) {
+            setcookie("name",$name,time()+86400, "/");
+        } 
+        else {
+            $nameErr = 1;
+            $flag = 0;
+        }
+        if (strlen($number) == 11) {
+            setcookie("number",$number,time()+86400, "/");
+        } 
+        else {
+            $numberErr = 1;
+            $flag = 0;
+        }
+
+        echo $_COOKIE["name"];
+        echo $_COOKIE["number"];
+        echo $_COOKIE["email"];
+        if($flag == 1){
+            $options = array(
+                'http' => array(
+                    'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                    'method'  => 'POST',
+                    'content' => http_build_query($_POST)
+                )
+            );
+            $context  = stream_context_create($options);
+            $result = file_get_contents('http://95.213.139.91:600/tables', false, $context);
+        }
+    }
+?>
