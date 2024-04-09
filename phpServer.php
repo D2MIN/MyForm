@@ -1,12 +1,13 @@
 <?php
     $email = $_POST["email"];
-    // $name = $_POST["name"];
+    $name = $_POST["name"];
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         setcookie("email", $email, time() + (86400 * 30), "/"); // 86400 = 1 day
-        setcookie("name",$name,time()+86400, "/")
+        setcookie("name",$name,time()+86400, "/");
     } else {
         $emailErr = "Invalid email format";
     }
+    echo $email;
 ?>
 
 <!DOCTYPE html>
