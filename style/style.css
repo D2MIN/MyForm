@@ -2,7 +2,7 @@
   display: none;
 }
 
-.span .error{
+.span.error{
   display: block;
   background-color: rgb(255, 96, 96);
   color: white;
