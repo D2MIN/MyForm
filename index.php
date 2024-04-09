@@ -25,7 +25,7 @@
             $flag = 0;
         }
 
-        // echo $leng + " - " + $about;
+        echo $leng . " - " . $about;
 
         if($flag == 1){
             $options = array(
