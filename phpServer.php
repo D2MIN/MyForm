@@ -1,10 +1,13 @@
 <?php
     $email = $_POST["email"];
+    $name = $_POST["name"];
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         setcookie("email", $email, time() + (86400 * 30), "/"); // 86400 = 1 day
+        setcookie("name",$name,time()+86400, "/")
     } else {
         $emailErr = "Invalid email format";
     }
+    echo $name;
 ?>
 
 <!DOCTYPE html>
@@ -18,11 +21,11 @@
 </head>
 <body>
     <h1>Форма записи в базу данных</h1>
-    <form id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+    <form id="form" action="phpServer.php" method="POST">
         <div class="body">
             <div class="info">
                 <div class="input">
-                    <input name="name" id="name" type="text" value="" placeholder="Имя" required>
+                    <input name="name" id="name" type="text" value="<?php echo $_COOKIE["name"]; ?>" placeholder="Имя" required>
                     <input name="number" id="number" type="number" value="" placeholder="Номер" required>
                     <input name="email" id="email" type="email" value="<?php echo $_COOKIE["email"]; ?>" placeholder="Почта" required>
                     <input name="date" id="date" type="date" placeholder="" required>
