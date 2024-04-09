@@ -75,14 +75,14 @@
             setcookie("name",$name,time()+86400, "/");
         } 
         else {
-            $nameErr = 1;
+            $nameErr = "FUCK";
             $flag = 0;
         }
         if (strlen($number) == 11) {
             setcookie("number",$number,time()+86400, "/");
         } 
         else {
-            $numberErr = 1;
+            $numberErr = "FUCK";
             $flag = 0;
         }
 
