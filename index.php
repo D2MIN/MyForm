@@ -1,7 +1,4 @@
 <?php
-    if (!isset($_COOKIE["error"])) {
-        setcookie("error", "", time() - 3600, "/");
-    }
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $flag = 1;
         $name = $_POST["name"];
@@ -12,24 +9,37 @@
         $lengs = $_POST["leng"];
         $about = $_POST["about"];
         
-        $values = [];
-        $errors = [];
+        $numberErr = 0;
+        $nameErr = 0;
 
         setcookie("email",$email,time()+86400,"/");
-        if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) {
-            $errors['name'] = "Только символы русского алфавита";
+        if (preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) {
+            setcookie("name",$name,time()+86400, "/");
         } 
-        if !(strlen($number) == 11) {
-            $errors['number'] = "Похоже вы ввели неверное количество цифр";
+        else {
+            $nameErr = "error";
+            $flag = 0;
+            // header("Location: form.php");
+        }
+        if (strlen($number) == 11) {
+            setcookie("number",$number,time()+86400, "/");
+        } 
+        else {
+            $numberErr = "error";
+            $flag = 0;
+            // header("Location: index.php");
         }
 
-        if(empty($errors)){
-            // POST TO JS SERVER
-        }else{
-            $values = ["name" => $name, "email" => $email, "phone" => $phone];
-            setcookie("error", $errors, 0, "/");
-            setcookie("values", $values, 0, "/");
-            header("Location: form.php");
+        if($flag == 1){
+            $options = array(
+                'http' => array(
+                    'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                    'method'  => 'POST',
+                    'content' => http_build_query($_POST)
+                )
+            );
+            $context  = stream_context_create($options);
+            $result = file_get_contents('http://95.213.139.91:600/tables', false, $context);
         }
     }
 ?>
@@ -49,15 +59,11 @@
         <div class="body">
             <div class="info">
                 <div class="input">
-                    <input class="<?php echo $nameErr?>" name="name" id="name" type="text" value="<?= htmlspecialchars($_COOKIE["values"]["name"] ?? "") ?>" placeholder="Имя" required>
-                        <span class="span <?php htmlspecialchars($_COOKIE["error"]["name"] ?? "") ?>">
-                            <?= htmlspecialchars($_COOKIE["error"]["name"] ?? "") ?> 
-                        </span>
-                    <input class="<?php echo $numberErr?>" name="number" id="number" type="number" value="<?= htmlspecialchars($_COOKIE["values"]["number"] ?? "") ?>" placeholder="Номер телефона" required>
-                        <span class="span <?php htmlspecialchars($_COOKIE["error"]["number"] ?? "") ?>">
-                            <?= htmlspecialchars($_COOKIE["error"]["number"] ?? "") ?>
-                        </span>
-                    <input name="email" id="email" type="email" value="<?php htmlspecialchars($_COOKIE["values"]["email"] ?? "") ?>" placeholder="Почта" required>
+                    <input class="<?php echo $nameErr?>" name="name" id="name" type="text" value="<?php echo $_COOKIE["name"]; ?>" placeholder="Имя" required>
+                        <span class="span <?php echo $nameErr?>"> <?php if($nameErr != 0) echo "Неверные символы" ?> </span>
+                    <input class="<?php echo $numberErr?>" name="number" id="number" type="number" value="<?php echo $_COOKIE["number"]; ?>" placeholder="Номер" required>
+                        <span class="span <?php echo $numberErr?>"> <?php if($numberErr != 0) echo "Неправильное количество символов" ?> </span>
+                    <input name="email" id="email" type="email" value="<?php echo $_COOKIE["email"]; ?>" placeholder="Почта" required>
                     <input name="date" id="date" type="date" placeholder="" required>
                 </div>
                 <div class="cheked">
