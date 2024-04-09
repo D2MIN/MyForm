@@ -86,7 +86,7 @@
             $flag = 0;
         }
 
-        echo $date + "\br";
+        echo $date;
         echo $gen;
 
         if($flag == 1){
