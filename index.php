@@ -6,6 +6,8 @@
         $number = $_POST["number"];
         $date = $_POST["date"];
         $gen = $_POST["gen"];
+        $leng = $_POST["leng[]"];
+        $about = $_POST["about"];
 
         setcookie("email",$email,time()+86400,"/");
         if (preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) {
@@ -23,8 +25,7 @@
             $flag = 0;
         }
 
-        echo $date;
-        echo $gen;
+        echo $leng + " - " + $about;
 
         if($flag == 1){
             $options = array(
