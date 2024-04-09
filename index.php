@@ -1,7 +1,6 @@
 <?php
     if (!isset($_COOKIE["error"])) {
         setcookie("error", "", time() - 3600, "/");
-        setcookie("values", "", time() - 3600, "/");
     }
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $flag = 1;
@@ -19,11 +18,9 @@
         setcookie("email",$email,time()+86400,"/");
         if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) {
             $errors['name'] = "Только символы русского алфавита";
-            // setcookie("name",$name,time()+86400, "/");
         } 
         if !(strlen($number) == 11) {
             $errors['number'] = "Похоже вы ввели неверное количество цифр";
-            // setcookie("number",$number,time()+86400, "/");
         }
 
         if(empty($errors)){
@@ -40,7 +37,7 @@
             //     $result = file_get_contents('http://95.213.139.91:600/tables', false, $context);
             // }
         }else{
-            $values = ["name" => $name, "phone" => $phone];
+            $values = ["name" => $name, "email" => $email, "phone" => $phone];
             setcookie("error", $errors, 0, "/");
             setcookie("values", $values, 0, "/");
             header("Location: form.php");
@@ -71,7 +68,7 @@
                         <span class="span <?php htmlspecialchars($_COOKIE["error"]["number"] ?? "") ?>">
                             <?= htmlspecialchars($_COOKIE["error"]["number"] ?? "") ?>
                         </span>
-                    <input name="email" id="email" type="email" value="<?php echo $_COOKIE["email"]; ?>" placeholder="Почта" required>
+                    <input name="email" id="email" type="email" value="<?php htmlspecialchars($_COOKIE["values"]["email"] ?? "") ?>" placeholder="Почта" required>
                     <input name="date" id="date" type="date" placeholder="" required>
                 </div>
                 <div class="cheked">
