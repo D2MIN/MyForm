@@ -19,23 +19,12 @@
         if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) {
             $errors['name'] = "Только символы русского алфавита";
         } 
-        if !(strlen($number) == 11) {
+        if (strlen($number) != 11) {
             $errors['number'] = "Похоже вы ввели неверное количество цифр";
         }
 
         if(empty($errors)){
             // POST TO JS SERVER
-            // if($flag == 1){
-            //     $options = array(
-            //         'http' => array(
-            //             'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-            //             'method'  => 'POST',
-            //             'content' => http_build_query($_POST)
-            //         )
-            //     );
-            //     $context  = stream_context_create($options);
-            //     $result = file_get_contents('http://95.213.139.91:600/tables', false, $context);
-            // }
         }else{
             $values = ["name" => $name, "email" => $email, "phone" => $phone];
             setcookie("error", $errors, 0, "/");
@@ -60,11 +49,11 @@
         <div class="body">
             <div class="info">
                 <div class="input">
-                    <input class="<?php echo $nameErr?>" name="name" id="name" type="text" value="<?= htmlspecialchars($_COOKIE["values"]["name"] ?? "") ?>" placeholder="Имя" required>
+                    <input class="<?php htmlspecialchars($_COOKIE["error"]["name"] ?? "" ?>" name="name" id="name" type="text" value="<?= htmlspecialchars($_COOKIE["values"]["name"] ?? "") ?>" placeholder="Имя" required>
                         <span class="span <?php htmlspecialchars($_COOKIE["error"]["name"] ?? "") ?>">
                             <?= htmlspecialchars($_COOKIE["error"]["name"] ?? "") ?> 
                         </span>
-                    <input class="<?php echo $numberErr?>" name="number" id="number" type="number" value="<?= htmlspecialchars($_COOKIE["values"]["number"] ?? "") ?>" placeholder="Номер телефона" required>
+                    <input class="<?php htmlspecialchars($_COOKIE["error"]["name"] ?? "" ?>" name="number" id="number" type="number" value="<?= htmlspecialchars($_COOKIE["values"]["number"] ?? "") ?>" placeholder="Номер телефона" required>
                         <span class="span <?php htmlspecialchars($_COOKIE["error"]["number"] ?? "") ?>">
                             <?= htmlspecialchars($_COOKIE["error"]["number"] ?? "") ?>
                         </span>
