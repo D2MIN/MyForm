@@ -61,7 +61,7 @@
                     <input class="<?php echo $nameErr?>" name="name" id="name" type="text" value="<?php echo $_COOKIE["name"]; ?>" placeholder="Имя" required>
                         <span class="span <?php echo $nameErr?>"> <?php if($nameErr != 0) echo "Неверные символы" ?> </span>
                     <input class="<?php echo $numberErr?>" name="number" id="number" type="number" value="<?php echo $_COOKIE["number"]; ?>" placeholder="Номер" required>
-                        <span class="span <?php echo $nameErr?>"> <?php if($numberErr != 0) echo "Неправильное количество символов" ?> </span>
+                        <span class="span <?php echo $numberErr?>"> <?php if($numberErr != 0) echo "Неправильное количество символов" ?> </span>
                     <input name="email" id="email" type="email" value="<?php echo $_COOKIE["email"]; ?>" placeholder="Почта" required>
                     <input name="date" id="date" type="date" placeholder="" required>
                 </div>
