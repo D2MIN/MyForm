@@ -1,37 +1,37 @@
 <?php
-    if (!isset($_COOKIE["error"])) {
-        setcookie("error", "", time() - 3600, "/");
-    }
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $flag = 1;
-        $name = $_POST["name"];
-        $email = $_POST["email"];
-        $number = $_POST["number"];
-        $date = $_POST["date"];
-        $gen = $_POST["gen"];
-        $lengs = $_POST["leng"];
-        $about = $_POST["about"];
-        
-        $values = [];
-        $errors = [];
+if (!isset($_COOKIE["error"])) {
+    setcookie("error", "", time() - 3600, "/");
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $flag = 1;
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $number = $_POST["number"];
+    $date = $_POST["date"];
+    $gen = $_POST["gen"];
+    $lengs = $_POST["leng"];
+    $about = $_POST["about"];
 
-        setcookie("email",$email,time()+86400,"/");
-        if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) {
-            $errors['name'] = "Только символы русского алфавита";
-        } 
-        if (strlen($number) != 11) {
-            $errors['number'] = "Похоже вы ввели неверное количество цифр";
-        }
+    $values = [];
+    $errors = [];
 
-        if(empty($errors)){
-            // POST TO JS SERVER
-        }else{
-            $values = ["name" => $name, "email" => $email, "phone" => $phone];
-            setcookie("error", $errors, 0, "/");
-            setcookie("values", $values, 0, "/");
-            header("Location: form.php");
-        }
+    setcookie("email",$email,time()+86400,"/");
+    if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) {
+        $errors['name'] = "Только символы русского алфавита";
     }
+    if (strlen($number) != 11) {
+        $errors['number'] = "Похоже вы ввели неверное количество цифр";
+    }
+
+    if(empty($errors)){
+        // POST TO JS SERVER
+    }else{
+        $values = ["name" => $name, "email" => $email, "number" => $number];
+        setcookie("error", $errors, 0, "/");
+        setcookie("values", $values, 0, "/");
+        header("Location: form.php");
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -49,15 +49,15 @@
         <div class="body">
             <div class="info">
                 <div class="input">
-                    <input class="<?php htmlspecialchars($_COOKIE["error"]["name"] ?? "" ?>" name="name" id="name" type="text" value="<?= htmlspecialchars($_COOKIE["values"]["name"] ?? "") ?>" placeholder="Имя" required>
-                        <span class="span <?php htmlspecialchars($_COOKIE["error"]["name"] ?? "") ?>">
-                            <?= htmlspecialchars($_COOKIE["error"]["name"] ?? "") ?> 
-                        </span>
-                    <input class="<?php htmlspecialchars($_COOKIE["error"]["name"] ?? "" ?>" name="number" id="number" type="number" value="<?= htmlspecialchars($_COOKIE["values"]["number"] ?? "") ?>" placeholder="Номер телефона" required>
-                        <span class="span <?php htmlspecialchars($_COOKIE["error"]["number"] ?? "") ?>">
-                            <?= htmlspecialchars($_COOKIE["error"]["number"] ?? "") ?>
-                        </span>
-                    <input name="email" id="email" type="email" value="<?php htmlspecialchars($_COOKIE["values"]["email"] ?? "") ?>" placeholder="Почта" required>
+                    <input class="<?php echo isset($errors['name']) ? 'error' : ''; ?>" name="name" id="name" type="text" value="<?= htmlspecialchars($_COOKIE["values"]["name"] ?? "") ?>" placeholder="Имя" required>
+                    <span class="error <?= htmlspecialchars($_COOKIE["error"]["name"] ?? "") ?>">
+                        <?= htmlspecialchars($_COOKIE["error"]["name"] ?? "") ?>
+                    </span>
+                    <input class="<?php echo isset($errors['number']) ? 'error' : ''; ?>" name="number" id="number" type="number" value="<?= htmlspecialchars($_COOKIE["values"]["number"] ?? "") ?>" placeholder="Номер телефона" required>
+                    <span class="error <?= htmlspecialchars($_COOKIE["error"]["number"] ?? "") ?>">
+                        <?= htmlspecialchars($_COOKIE["error"]["number"] ?? "") ?>
+                    </span>
+                    <input name="email" id="email" type="email" value="<?= htmlspecialchars($_COOKIE["values"]["email"] ?? "") ?>" placeholder="Почта" required>
                     <input name="date" id="date" type="date" placeholder="" required>
                 </div>
                 <div class="cheked">
