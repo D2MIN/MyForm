@@ -1,6 +1,15 @@
 .error{
-  background-color: red;
+  background-color: rgb(255, 96, 96);
   color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+input.error{
+  background-color: rgb(255, 96, 96);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 body {
