@@ -27,7 +27,7 @@
 </head>
 <body>
     <h1>Форма записи в базу данных</h1>
-    <form id="form" action="http://95.213.139.91/MyForm/" method="POST">
+    <form id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
         <div class="body">
             <div class="info">
                 <div class="input">
