@@ -1,7 +1,7 @@
 <?php
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $name = $_POST['name'];
-        if($name == 'Roman'){
+        if(preg_match('/[а-яёА-ЯЁ]+/u', $name)){
             setcookie("name",$name, time() + 86400,"/");
         }else{
             $nameErr = "invalid Name";
@@ -16,7 +16,7 @@
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
     Email: <input type="text" name="name" value="<?php echo $_COOKIE["name"]; ?>">
-    <span class="error">* <?php echo $emailErr;?></span>
+    <span class="error">* <?php echo $nameErr;?></span>
     <br><br>
     <input type="submit" name="submit" value="Submit">
 </form>
