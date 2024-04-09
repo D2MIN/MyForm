@@ -18,8 +18,8 @@
         } 
         else {
             $nameErr = "error";
-            echo $nameErr;
             $flag = 0;
+            header("Location: index.php");
         }
         if (strlen($number) == 11) {
             setcookie("number",$number,time()+86400, "/");
@@ -27,6 +27,7 @@
         else {
             $numberErr = "error";
             $flag = 0;
+            header("Location: index.php");
         }
 
         if($flag == 1){
