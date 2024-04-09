@@ -67,9 +67,11 @@
         $name = $_POST["name"];
         $email = $_POST["email"];
         $number = $_POST["number"];
+        $date = $_POST["date"];
+        $gen = $_POST["gen"];
 
         setcookie("email",$email,time()+86400,"/");
-        if (preg_match('/[а-яёА-ЯЁ]+/u', $name)) {
+        if !(preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) {
             setcookie("name",$name,time()+86400, "/");
         } 
         else {
@@ -84,9 +86,9 @@
             $flag = 0;
         }
 
-        echo $_COOKIE["name"];
-        echo $_COOKIE["number"];
-        echo $_COOKIE["email"];
+        echo $date + "\br";
+        echo $gen;
+
         if($flag == 1){
             $options = array(
                 'http' => array(
