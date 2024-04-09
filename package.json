@@ -1,14 +1,12 @@
 {
-  "dependencies": {
-    "mysql": "^2.18.1"
-  },
+  "name": "myform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
   "scripts": {
+    "test": "test",
     "start": "node server.js"
   },
-  "name": "myform",
-  "description": "This is form writing on js in node which using BD",
-  "version": "1.0.0",
-  "main": "script.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/D2MIN/MyForm.git"
@@ -19,5 +17,9 @@
     "url": "https://github.com/D2MIN/MyForm/issues"
   },
   "homepage": "https://github.com/D2MIN/MyForm#readme",
-  "devDependencies": {}
+  "dependencies": {
+    "http": "^0.0.1-security",
+    "mysql": "^2.18.1",
+    "querystring": "^0.2.1"
+  }
 }
