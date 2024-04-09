@@ -1,18 +1,20 @@
 <?php
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $number = $_POST["number"];
-    if (preg_match('/[а-яёА-ЯЁ]+/u', $name)) {
-        setcookie("name",$name,time()+86400, "/");
-    } 
-    else {
-        $nameErr = 1;
-    }
-    if (strlen($number) == 11) {
-        setcookie("number",$number,time()+86400, "/");
-    } 
-    else {
-        $numberErr = 1;
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = $_POST["name"];
+        $email = $_POST["email"];
+        $number = $_POST["number"];
+        if (preg_match('/[а-яёА-ЯЁ]+/u', $name)) {
+            setcookie("name",$name,time()+86400, "/");
+        } 
+        else {
+            $nameErr = 1;
+        }
+        if (strlen($number) == 11) {
+            setcookie("number",$number,time()+86400, "/");
+        } 
+        else {
+            $numberErr = 1;
+        }
     }
 ?>
 
