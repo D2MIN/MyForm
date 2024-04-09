@@ -18,6 +18,7 @@
         } 
         else {
             $nameErr = "error";
+            echo $nameErr;
             $flag = 0;
         }
         if (strlen($number) == 11) {
@@ -57,10 +58,10 @@
         <div class="body">
             <div class="info">
                 <div class="input">
-                    <input class="<?php $nameErr?>" name="name" id="name" type="text" value="<?php echo $_COOKIE["name"]; ?>" placeholder="Имя" required>
                         <span class="error"> <?php if($nameErr != 0) echo "Неверные символы" ?> </span>
-                    <input class="<?php $numberErr?>" name="number" id="number" type="number" value="<?php echo $_COOKIE["number"]; ?>" placeholder="Номер" required>
+                    <input class="<?php $nameErr?>" name="name" id="name" type="text" value="<?php echo $_COOKIE["name"]; ?>" placeholder="Имя" required>
                         <span class="error"> <?php if($numberErr != 0) echo "Неправильное количество символов" ?> </span>
+                    <input class="<?php $numberErr?>" name="number" id="number" type="number" value="<?php echo $_COOKIE["number"]; ?>" placeholder="Номер" required>
                     <input name="email" id="email" type="email" value="<?php echo $_COOKIE["email"]; ?>" placeholder="Почта" required>
                     <input name="date" id="date" type="date" placeholder="" required>
                 </div>
