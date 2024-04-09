@@ -71,7 +71,7 @@
         // $gen = $_POST["gen"];
 
         setcookie("email",$email,time()+86400,"/");
-        if !(preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) {
+        if (preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) {
             setcookie("name",$name,time()+86400, "/");
         } 
         else {
