@@ -30,11 +30,12 @@
 
         if(isset($_COOKIE['nameErr']) || isset($_COOKIE['numberErr'])){
             $count = 1;
+            header("Location: index.php?count=".$count);
         }else{
             $count = 0;
+            header("Location: index.php?count=".$count);
         }
         
-        header("Location: index.php?count=".$count);
     }
 ?>
 
