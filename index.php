@@ -29,12 +29,12 @@
 
         $count = 1;
         if(isset($_COOKIE['nameErr']) || isset($_COOKIE['numberErr'])){
-            header("Location: index.php");
+            echo "Error ----"
         }else{
-            echo $count;
-            $count = $count + 1;
-            header("Location: index.php");
+            echo "Done ----"
         }
+        
+        header("Location: index.php");
         // if($flag == 1){
         //     $options = array(
         //         'http' => array(
