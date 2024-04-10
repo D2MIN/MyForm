@@ -25,6 +25,7 @@
         }
         else{
             setcookie("number",$number,time()+5000);
+            $count = 'FUCK YOU';
             setcookie("numberErr", '', time()-3600, "/");
         }
 
