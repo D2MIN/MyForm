@@ -27,7 +27,7 @@
             setcookie("numberErr", '', time()-3600, "/");
         }
 
-
+        $count = "Hello";
         if(isset($_COOKIE['nameErr']) || isset($_COOKIE['numberErr'])){
             $count = 1;
         }else{
