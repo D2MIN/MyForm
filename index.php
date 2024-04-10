@@ -26,7 +26,7 @@
             setcookie("name",$name,time()+86400, "/");
         }
         
-        
+        echo $_COOKIE["name"] . " " . $_COOKIE["number"];
         // header("Location: index.php");
         if($flag == 1){
             $options = array(
