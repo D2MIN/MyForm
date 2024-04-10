@@ -12,11 +12,8 @@
         $numberErr = 0;
         $nameErr = 0;
 
-        if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) {
-            header("Location: index.php");
-        } else{
-            header("Location: server.php");
-        }
+        if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) header("Location: index.php");
+        if (strlen($number) != 11) header("Location: error.php");
 
         // поменял порядок условий надо бы сделать с header("Location: index.php"); 
         // но пока не знаю как сохранять уже готовое и выводить ошибку где неправильно
