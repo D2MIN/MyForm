@@ -25,6 +25,7 @@
             setcookie("number",$number,time()+5000);
         }
 
+        header("Location: index.php");
         // if($flag == 1){
         //     $options = array(
         //         'http' => array(
