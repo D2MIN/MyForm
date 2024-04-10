@@ -13,7 +13,7 @@
         $nameErr = 0;
 
         $arr = [1,2,3,4,5];
-        setcookie("arr", $arr, time()+5000);
+        setcookie("arr", 'arr', time()+5000);
 
         echo $_COOKIE['arr'];
         // поменял порядок условий надо бы сделать с header("Location: index.php"); 
