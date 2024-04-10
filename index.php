@@ -11,11 +11,11 @@
 
         
         if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)){
-            setcookie("NameErr", 'error', time()+5000, "/index.php");
+            setcookie("NameErr", 'error', time()+5000, "/");
             header("Location: index.php");
         }
         else{
-            setcookie("NameErr", '', time()-3600, "/index.php");
+            setcookie("NameErr", '', time()-3600, "/");
             setcookie("name",$name,time()+5000);
         }
         if (strlen($number) != 11){
