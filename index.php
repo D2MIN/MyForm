@@ -8,18 +8,19 @@
         $gen = $_POST["gen"];
         $lengs = $_POST["leng"];
         $about = $_POST["about"];
-        
-        $numberErr = 0;
-        $nameErr = 0;
 
-        if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name))  header("Location: index.php");
+
+        if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)){
+            setcookie("NameErr", 'error', time()+5000);
+            header("Location: index.php");
+        }
         else{
             setcookie("name",$name,time()+5000);
-            echo "Name set";
         }
-        if (strlen($number) != 11) header("Location: index.php");
+        if (strlen($number) != 11){
+            header("Location: index.php");
+        }
         else{
-            echo "Number set";
             setcookie("number",$number,time()+5000);
         }
 
