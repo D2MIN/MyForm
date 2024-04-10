@@ -1,6 +1,6 @@
 <?php
+    $ans = $_GET['answer'];
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $ans = $_GET['ans'];
         $name = $_POST["name"];
         $email = $_POST["email"];
         $number = $_POST["number"];
@@ -28,8 +28,8 @@
         }
 
         if(isset($_COOKIE['nameErr']) || isset($_COOKIE['numberErr'])){
-            $ans = "Error";
-            header("Location: index.php?ans=".$ans);
+            $answer = "Error";
+            header("Location: index.php?answer=".$answer);
         }else{
             $url = 'http://95.213.139.91:600/answer';
             $data = array(
@@ -48,8 +48,8 @@
             );
             $context  = stream_context_create($options);
             $result = file_get_contents($url, false, $context);
-            $ans = "Данные отправлены!";
-            header("Location: index.php?ans=".$ans);
+            $answer = "Данные отправлены!";
+            header("Location: index.php?answer=".$answer);
         }
         
     }
@@ -65,7 +65,7 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1><?php echo $ans ?></h1>
+    <h1><?php echo $answer ?></h1>
     <h1>Форма записи в базу данных</h1>
     <form id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
         <div class="body">
