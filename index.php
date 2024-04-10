@@ -27,8 +27,7 @@
             setcookie("numberErr", '', time()-3600, "/");
         }
 
-        $count = 0;
-        echo $count;
+
         if(isset($_COOKIE['nameErr']) || isset($_COOKIE['numberErr'])){
             $count = 1;
         }else{
@@ -61,6 +60,7 @@
 </head>
 <body>
     <h1>Форма записи в базу данных</h1>
+    <h1><?php echo $count?></h1>
     <form id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
         <div class="body">
             <div class="info">
