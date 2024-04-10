@@ -12,10 +12,10 @@
         $numberErr = 0;
         $nameErr = 0;
 
-        if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) header("Location: index.php");
+        if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) { header("Location: index.php"); }
         setcookie("name",$name,tyme()+5000);
         echo "Name set";
-        if (strlen($number) != 11) header("Location: index.php");
+        if (strlen($number) != 11) { header("Location: index.php"); }
         echo "Number set";
         setcookie("number",$number,tyme()+5000);
 
