@@ -12,33 +12,38 @@
         $numberErr = 0;
         $nameErr = 0;
 
+        $arr = [1,2,3,4,5];
+        setcookie("arr", $arr, time()+5000);
+
+        echo $_COOKIE['arr'];
         // поменял порядок условий надо бы сделать с header("Location: index.php"); 
         // но пока не знаю как сохранять уже готовое и выводить ошибку где неправильно
-        setcookie("email",$email,time()+86400,"/");
-        if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) {
-            setcookie("nameErr",'error',time()+86400,"/");
-        } 
-        elseif (strlen($number) != 11) {
-            setcookie("numberErr",'error',time()+86400,"/");
-        } 
-        else {
-            setcookie("number",$number,time()+86400, "/");
-            setcookie("name",$name,time()+86400, "/");
-        }
         
-        echo $_COOKIE["nameErr"] . " " . $_COOKIE["numberErr"];
-        // header("Location: index.php");
-        if($flag == 1){
-            $options = array(
-                'http' => array(
-                    'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                    'method'  => 'POST',
-                    'content' => http_build_query($_POST)
-                )
-            );
-            $context  = stream_context_create($options);
-            $result = file_get_contents('http://95.213.139.91:600/tables', false, $context);
-        }
+        // setcookie("email",$email,time()+86400,"/");
+        // if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) {
+        //     setcookie("nameErr",'error',time()+86400,"/");
+        // } 
+        // elseif (strlen($number) != 11) {
+        //     setcookie("numberErr",'error',time()+86400,"/");
+        // } 
+        // else {
+        //     setcookie("number",$number,time()+86400, "/");
+        //     setcookie("name",$name,time()+86400, "/");
+        // }
+        
+        // echo $_COOKIE["nameErr"] . " " . $_COOKIE["numberErr"];
+        // // header("Location: index.php");
+        // if($flag == 1){
+        //     $options = array(
+        //         'http' => array(
+        //             'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+        //             'method'  => 'POST',
+        //             'content' => http_build_query($_POST)
+        //         )
+        //     );
+        //     $context  = stream_context_create($options);
+        //     $result = file_get_contents('http://95.213.139.91:600/tables', false, $context);
+        // }
     }
 ?>
 
