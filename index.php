@@ -32,7 +32,8 @@
             header("Location: index.php");
         }else{
             echo $count;
-            $count +=1;
+            $count = $count + 1;
+            header("Location: index.php");
         }
         // if($flag == 1){
         //     $options = array(
