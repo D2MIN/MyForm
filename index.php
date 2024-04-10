@@ -11,18 +11,18 @@
 
         
         if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)){
-            setcookie("NameErr", 'error', time()+5000, "/");
-            header("Location: index.php");
+            setcookie("nameErr", 'error', time()+5000, "/");
         }
         else{
-            setcookie("NameErr", '', time()-3600, "/");
+            setcookie("nameErr", '', time()-3600, "/");
             setcookie("name",$name,time()+5000);
         }
         if (strlen($number) != 11){
-            header("Location: index.php");
+            setcookie("numberErr", 'error', time()+5000, "/");
         }
         else{
             setcookie("number",$number,time()+5000);
+            setcookie("numberErr", '', time()-3600, "/");
         }
 
         header("Location: index.php");
