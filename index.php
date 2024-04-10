@@ -1,5 +1,5 @@
 <?php
-    $ans = $_GET['answer'];
+    $ans = $_GET['ans'];
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST["name"];
         $email = $_POST["email"];
