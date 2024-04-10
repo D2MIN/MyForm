@@ -12,21 +12,26 @@
         
         if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)){
             setcookie("nameErr", 'error', time()+5000, "/");
-            setcookie("name",'',time()-3600,"/");
+            setcookie("name",'',time()-5000,"/");
         }
         else{
-            setcookie("nameErr", '', time()-3600, "/");
+            setcookie("nameErr", '', time()-5000, "/");
             setcookie("name",$name,time()+5000, "/");
         }
         if (strlen($number) != 11){
             setcookie("numberErr", 'error', time()+5000, "/");
+            setcookie("number","",time()-5000);
         }
         else{
             setcookie("number",$number,time()+5000);
             setcookie("numberErr", '', time()-3600, "/");
         }
 
-        header("Location: index.php");
+        if(isset($_COOKIE['nameErr']) || isset($_COOKIE['numberErr'])){
+            header("Location: index.php");
+        }else{
+            echo "Data save";
+        }
         // if($flag == 1){
         //     $options = array(
         //         'http' => array(
