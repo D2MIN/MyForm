@@ -1,5 +1,5 @@
 <?php
-    $count = "Hello";
+    $count = $_GET['count'];
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $flag = 1;
         $name = $_POST["name"];
