@@ -1,5 +1,5 @@
 <?php
-    $answer = $_GET['answer'];
+    $ans = $_GET['answer'];
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST["name"];
         $email = $_POST["email"];
@@ -48,8 +48,8 @@
             );
             $context  = stream_context_create($options);
             $result = file_get_contents($url, false, $context);
-            $answer = "Данные отправлены!"
-            header("Location: index.php?count=".$answer);
+            $ans = "Данные отправлены!"
+            header("Location: index.php?count=".$ans);
         }
         
     }
@@ -65,7 +65,7 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1><?php echo $answer ?></h1>
+    <h1><?php echo $ans ?></h1>
     <h1>Форма записи в базу данных</h1>
     <form id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
         <div class="body">
