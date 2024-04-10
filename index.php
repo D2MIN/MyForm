@@ -28,7 +28,7 @@
         }
 
         if(isset($_COOKIE['nameErr']) || isset($_COOKIE['numberErr'])){
-            $answer = "";
+            $ans = "";
             header("Location: index.php?count=".$count);
         }else{
             $url = 'http://95.213.139.91:600/answer';
@@ -48,7 +48,7 @@
             );
             $context  = stream_context_create($options);
             $result = file_get_contents($url, false, $context);
-            $ans = "Данные отправлены!"
+            $ans = "Данные отправлены!";
             header("Location: index.php?count=".$ans);
         }
         
