@@ -28,7 +28,7 @@
         }
 
         if(isset($_COOKIE['nameErr']) || isset($_COOKIE['numberErr'])){
-            header("Location: index.php");
+            header("Location: errpor.php");
         }else{
             echo "Data save";
         }
