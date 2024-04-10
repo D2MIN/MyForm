@@ -1,7 +1,6 @@
 <?php
-    $count = $_GET['count'];
+    $answer = $_GET['answer'];
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $flag = 1;
         $name = $_POST["name"];
         $email = $_POST["email"];
         $number = $_POST["number"];
@@ -29,11 +28,28 @@
         }
 
         if(isset($_COOKIE['nameErr']) || isset($_COOKIE['numberErr'])){
-            $count = 1;
+            $answer = "";
             header("Location: index.php?count=".$count);
         }else{
-            $count = 0;
-            header("Location: index.php?count=".$count);
+            $url = 'http://95.213.139.91:600/answer';
+            $data = array(
+                "name" => $name,
+                "email" => $email,
+                "number" => $number,
+                "date" => $date,
+                "lengs" => $lengs,
+                "about" => $about
+            );
+            $options = array(
+                'http' => array(
+                    'method'  => 'POST',
+                    'content' => http_build_query($data),
+                ),
+            );
+            $context  = stream_context_create($options);
+            $result = file_get_contents($url, false, $context);
+            $answer = "Данные отправлены!"
+            header("Location: index.php?count=".$answer);
         }
         
     }
@@ -49,8 +65,8 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <h1><?php echo $answer ?></h1>
     <h1>Форма записи в базу данных</h1>
-    <h1><?php echo $count ?></h1>
     <form id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
         <div class="body">
             <div class="info">
