@@ -27,11 +27,12 @@
             setcookie("numberErr", '', time()-3600, "/");
         }
 
-        $count = 1;
+        $count = 0;
+        echo $count;
         if(isset($_COOKIE['nameErr']) || isset($_COOKIE['numberErr'])){
-            echo "Error ----";
+            $count = 1;
         }else{
-            echo "Done ----";
+            $count = 0;
         }
         
         header("Location: index.php");
