@@ -29,9 +29,9 @@
 
         $count = 1;
         if(isset($_COOKIE['nameErr']) || isset($_COOKIE['numberErr'])){
-            echo "Error ----"
+            echo "Error ----";
         }else{
-            echo "Done ----"
+            echo "Done ----";
         }
         
         header("Location: index.php");
