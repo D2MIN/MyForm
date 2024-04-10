@@ -9,10 +9,10 @@
         $lengs = $_POST["leng"];
         $about = $_POST["about"];
 
-        setcookie("NameErr", '', time()-3600, "/");
+        setcookie("NameErr", '', time()-3600, "/index.php");
 
         if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)){
-            setcookie("NameErr", 'error', time()+5000);
+            setcookie("NameErr", 'error', time()+5000, "/index.php");
             header("Location: index.php");
         }
         else{
