@@ -29,7 +29,7 @@
 
         if(isset($_COOKIE['nameErr']) || isset($_COOKIE['numberErr'])){
             $ans = "Error";
-            header("Location: index.php?ans=".urlencode($ans));
+            header("Location: index.php?ans=".$ans);
         }else{
             $url = 'http://95.213.139.91:600/answer';
             $data = array(
@@ -49,7 +49,7 @@
             $context  = stream_context_create($options);
             $result = file_get_contents($url, false, $context);
             $ans = "Данные отправлены!";
-            header("Location: index.php?ans=".urlencode($ans));
+            header("Location: index.php?ans=".$ans);
         }
         
     }
