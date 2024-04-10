@@ -27,10 +27,12 @@
             setcookie("numberErr", '', time()-3600, "/");
         }
 
+        $count = 1;
         if(isset($_COOKIE['nameErr']) || isset($_COOKIE['numberErr'])){
-            header("Location: errpor.php");
+            header("Location: index.php");
         }else{
-            echo "Data save";
+            echo $count;
+            $count +=1;
         }
         // if($flag == 1){
         //     $options = array(
