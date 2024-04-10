@@ -12,6 +12,8 @@
         $numberErr = 0;
         $nameErr = 0;
 
+        // поменял порядок условий надо бы сделать с header("Location: index.php"); 
+        // но пока не знаю как сохранять уже готовое и выводить ошибку где неправильно
         setcookie("email",$email,time()+86400,"/");
         if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) {
             setcookie("nameErr",'error',tyme()+86400,"/");
