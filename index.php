@@ -9,7 +9,7 @@
         $lengs = $_POST["leng"];
         $about = $_POST["about"];
 
-        setcookie("NameErr", 'error', time()-5000);
+        setcookie("NameErr", '', time()-3600, "/");
 
         if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)){
             setcookie("NameErr", 'error', time()+5000);
