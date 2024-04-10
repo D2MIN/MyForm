@@ -9,6 +9,7 @@
         $lengs = $_POST["leng"];
         $about = $_POST["about"];
 
+        setcookie("NameErr", 'error', time()-5000);
 
         if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)){
             setcookie("NameErr", 'error', time()+5000);
@@ -54,7 +55,7 @@
             <div class="info">
                 <div class="input">
                     <input class="<?php echo $_COOKIE['nameErr'] ?>" name="name" id="name" type="text" value="<?php echo $_COOKIE["name"]; ?>" placeholder="Имя" required>
-                        <span class="span <?php $_COOKIE['nameErr'] ?>"> <?php if($nameErr != 0) echo "Неверные символы" ?> </span>
+                        <span class="span <?php $_COOKIE['nameErr'] ?>"> <?php if(isset($_COOKIE['nameErr'])) echo "Неверные символы" ?> </span>
                     <input class="<?php echo $numberErr?>" name="number" id="number" type="number" value="<?php echo $_COOKIE["number"]; ?>" placeholder="Номер" required>
                         <span class="span <?php echo $numberErr?>"> <?php if($numberErr != 0) echo "Неправильное количество цифр" ?> </span>
                     <input name="email" id="email" type="email" value="<?php echo $_COOKIE["email"]; ?>" placeholder="Почта" required>
