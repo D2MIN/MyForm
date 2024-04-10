@@ -1,6 +1,6 @@
 <?php
-    $ans = $_GET['ans'];
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $ans = $_GET['ans'];
         $name = $_POST["name"];
         $email = $_POST["email"];
         $number = $_POST["number"];
