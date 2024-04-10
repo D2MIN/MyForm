@@ -29,7 +29,7 @@
 
         if(isset($_COOKIE['nameErr']) || isset($_COOKIE['numberErr'])){
             $ans = "Error";
-            header("Location: index.php?count=".$ans);
+            header("Location: index.php?count=".urlencode($ans));
         }else{
             $url = 'http://95.213.139.91:600/answer';
             $data = array(
