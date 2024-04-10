@@ -9,13 +9,13 @@
         $lengs = $_POST["leng"];
         $about = $_POST["about"];
 
-        setcookie("NameErr", '', time()-3600, "/index.php");
-
+        
         if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)){
             setcookie("NameErr", 'error', time()+5000, "/index.php");
             header("Location: index.php");
         }
         else{
+            setcookie("NameErr", '', time()-3600, "/index.php");
             setcookie("name",$name,time()+5000);
         }
         if (strlen($number) != 11){
