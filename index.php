@@ -16,7 +16,7 @@
         }
         else{
             setcookie("nameErr", '', time()-3600, "/");
-            setcookie("name",$name,time()+5000);
+            setcookie("name",$name,time()+5000, "/");
         }
         if (strlen($number) != 11){
             setcookie("numberErr", 'error', time()+5000, "/");
