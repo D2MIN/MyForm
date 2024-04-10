@@ -12,7 +12,7 @@
         
         if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)){
             setcookie("nameErr", 'error', time()+5000, "/");
-            setcookie("name",$name,time()-5000,"/");
+            setcookie("name",$name,time()-3600,"/");
         }
         else{
             setcookie("nameErr", '', time()-3600, "/");
