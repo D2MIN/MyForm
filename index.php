@@ -16,17 +16,17 @@
         // но пока не знаю как сохранять уже готовое и выводить ошибку где неправильно
         setcookie("email",$email,time()+86400,"/");
         if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) {
-            setcookie("nameErr",'error',tyme()+86400,"/");
+            setcookie("nameErr",'error',time()+86400,"/");
         } 
         elseif (strlen($number) != 11) {
-            setcookie("numberErr",'error',tyme()+86400,"/");
+            setcookie("numberErr",'error',time()+86400,"/");
         } 
         else {
             setcookie("number",$number,time()+86400, "/");
             setcookie("name",$name,time()+86400, "/");
         }
         
-        echo $_COOKIE["name"] . " " . $_COOKIE["number"];
+        echo $_COOKIE["nameErr"] . " " . $_COOKIE["numberErr"];
         // header("Location: index.php");
         if($flag == 1){
             $options = array(
