@@ -14,9 +14,7 @@
 
         if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)) { header("Location: index.php"); }
         setcookie("name",$name,tyme()+5000);
-        echo $name;
         if (strlen($number) != 11) { header("Location: index.php"); }
-        echo $number;
         setcookie("number",$number,tyme()+5000);
 
         // if($flag == 1){
