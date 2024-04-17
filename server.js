@@ -52,38 +52,18 @@ const server = http.createServer((req, res) => {
         if (err) throw err;
         console.log("data users save");
         // res.send("data save");
-
-        // получение id вставленного пользователя
-        const userId = res.insertId;
-
-        // вставка связей пользователь-язык
-        for (const langName in lengs) {
-          // получение id языка
-          sql = 'SELECT id FROM lengs WHERE leng = ?';
-          db.query(sql, [langName], (err, results) => {
-            if (err) throw err;
-            if (results.length > 0) {
-              const langId = results[0].id;
-              // вставка связи пользователь-язык
-              sql = 'INSERT INTO user_lengs(user_id, leng_id) VALUES(?, ?)';
-              db.query(sql, [userId, langId], (err, result) => {
-                if (err) throw err;
-              });
-            }
-          });
-        }
       });
 
-      // for(leng in lengs){
-      //   //составление sql запроса
-      //   sql = `INSERT INTO user_lengs(user_id,leng_id) 
-      //         VALUE(LAST_INSERT_ID(),lengs.id where lengs.leng = ${leng});`;
+      for(leng in lengs){
+        //составление sql запроса
+        sql = `INSERT INTO user_lengs(user_id,leng_id) 
+              VALUE(LAST_INSERT_ID(),lengs.id where lengs.leng = ${leng});`;
 
-      //   //отправка sql запроса
-      //   db.query(sql,(err,res)=>{
-      //     if(err) throw err;
-      //   });
-      // };
+        //отправка sql запроса
+        db.query(sql,(err,res)=>{
+          if(err) throw err;
+        });
+      };
 
       // //составление sql запроса
       // sql = `INSERT INTO lengs(user_id,pascal,c,cpp,js,py,java,haskel,clijure,prolog,scara) 
