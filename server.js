@@ -47,7 +47,7 @@ const server = http.createServer((req, res) => {
       });
 
       //составление sql запроса
-      const userId = '';
+      let userId = '';
       let sql = 'INSERT INTO users(name, number, mail, date, gen, about) VALUES(?, ?, ?, ?, ?, ?)';
       db.query(sql, [name, number, email, date, gen, about], (err, res) => {
         if (err) throw err;
