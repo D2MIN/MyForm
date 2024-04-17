@@ -1,7 +1,7 @@
 const http = require('http');
 const querystring = require('querystring');
 const mysql = require('mysql');
-const {validateData,InsertLengs,HTMLAnswer,HTMLTables} = require('./script.js');
+const {validateData,makeLengsArr,InsertLengs,HTMLAnswer,HTMLTables} = require('./script.js');
 
 const server = http.createServer((req, res) => {
   if (req.method === 'POST' && req.url == "/answer") {
@@ -23,14 +23,15 @@ const server = http.createServer((req, res) => {
       const date = bodyObject.date;
       const gen = bodyObject.gen;
       const about = bodyObject.about;
-      const lengs = [];
-      for(let i = 0; i != 11; i++){
-        if(bodyObject[`lengs[${i}]`] != undefined){
-          lengs.push(bodyObject[`lengs[${i}]`]);
-        }else{
-          break;
-        }
-      }
+      const lengs = makeLengsArr(bodyObject);
+      // const lengs = [];
+      // for(let i = 0; i != 11; i++){
+      //   if(bodyObject[`lengs[${i}]`] != undefined){
+      //     lengs.push(bodyObject[`lengs[${i}]`]);
+      //   }else{
+      //     break;
+      //   }
+      // };
 
       console.log(name,number,email,date,gen,lengs,about);
       console.log(bodyObject);

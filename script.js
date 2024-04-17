@@ -13,6 +13,18 @@ function validateData(name,number,date){
   return ["Данные сохранены успешно. Спасибо!",1]
 }
 
+function makeLengsArr(bodyObject){
+  let lengs = [];
+  for(let i = 0; i != 11; i++){
+    if(bodyObject[`lengs[${i}]`] != undefined){
+      lengs.push(bodyObject[`lengs[${i}]`]);
+    }else{
+      break;
+    }
+  };
+  return lengs;
+}
+
 function InsertLengs(lengs){
   let lengsObj = {
     Pascal:0,
@@ -84,4 +96,5 @@ module.exports = {
   InsertLengs: InsertLengs,
   HTMLAnswer:HTMLAnswer,
   HTMLTables:HTMLTables,
+  makeLengsArr:makeLengsArr,
 };
