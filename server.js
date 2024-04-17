@@ -24,7 +24,6 @@ const server = http.createServer((req, res) => {
       const gen = bodyObject.gen;
       const lengs = bodyObject.lengs;
       const about = bodyObject.about;
-      console.log(name,number,email,date,gen,lengs,about)
       
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
       res.writeHead(200);
@@ -102,4 +101,5 @@ const server = http.createServer((req, res) => {
 // Запустить сервер на порту 600
 server.listen(600, function() {
   console.log('Сервер запущен на порту 600');
+  console.log(name,number,email,date,gen,lengs,about);
 });
