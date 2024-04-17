@@ -24,6 +24,7 @@ const server = http.createServer((req, res) => {
       const gen = bodyObject.gen;
       const lengs = bodyObject.lengs;
       const about = bodyObject.about;
+      console.log(name,number,email,date,gen,lengs,about);
       
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
       res.writeHead(200);
@@ -52,7 +53,7 @@ const server = http.createServer((req, res) => {
         // res.send("data save");
       })
 
-      let lengObj = InsertLengs(lengs);
+      // let lengObj = InsertLengs(lengs);
       sql = `INSERT INTO lengs(user_id,pascal,c,cpp,js,py,java,haskel,clijure,prolog,scara) 
              VALUE(LAST_INSERT_ID(),
              '${lengObj['Pascal']}','${lengObj['C']}','${lengObj['C++']}','${lengObj['JavaScript']}','${lengObj['Python']}',
@@ -101,5 +102,4 @@ const server = http.createServer((req, res) => {
 // Запустить сервер на порту 600
 server.listen(600, function() {
   console.log('Сервер запущен на порту 600');
-  console.log(name,number,email,date,gen,lengs,about);
 });
