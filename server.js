@@ -1,6 +1,6 @@
 const http = require('http');
 const querystring = require('querystring');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const {validateData,makeLengsArr,InsertLengs,HTMLAnswer,HTMLTables} = require('./script.js');
 
 const server = http.createServer((req, res) => {
@@ -94,7 +94,7 @@ const server = http.createServer((req, res) => {
       // db.query(sql,(err,res)=>{
       //   if(err) throw err;
       // })
-      
+
       };
     });
   }
