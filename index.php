@@ -30,7 +30,7 @@
             setcookie("number",$number,time()+5000, "/");
             setcookie("numberErr", '', time()-3600, "/");
         }
-        echo $data
+        echo $data;
 
         if($flag == 1){
             header("Location: index.php?answer=".$answer);
