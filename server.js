@@ -22,7 +22,7 @@ const server = http.createServer((req, res) => {
       const email = bodyObject.email;
       const date = bodyObject.date;
       const gen = bodyObject.gen;
-      const lengs = bodyObject.lengs;
+      const lengs = bodyObject['lengs'];
       const about = bodyObject.about;
       console.log(name,number,email,date,gen,lengs,about);
       
@@ -53,7 +53,7 @@ const server = http.createServer((req, res) => {
         // res.send("data save");
       })
 
-      // let lengObj = InsertLengs(lengs);
+      let lengObj = InsertLengs(lengs);
       sql = `INSERT INTO lengs(user_id,pascal,c,cpp,js,py,java,haskel,clijure,prolog,scara) 
              VALUE(LAST_INSERT_ID(),
              '${lengObj['Pascal']}','${lengObj['C']}','${lengObj['C++']}','${lengObj['JavaScript']}','${lengObj['Python']}',
