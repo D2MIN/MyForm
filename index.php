@@ -54,7 +54,7 @@
             $context  = stream_context_create($options);
             $result = file_get_contents($url, false, $context);
             $answer = "Данные отправлены!";
-            header("Location: index.php?answer=".$answer,$strdate);
+            header("Location: index.php?answer=$answer&strdate=$strdate");
         }
         
     }
