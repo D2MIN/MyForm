@@ -86,7 +86,7 @@ const server = http.createServer((req, res) => {
       host: 'localhost',
       user: 'd2min',
       password: 'Qwerty40982',
-      database: 'FDB'
+      database: 'Form'
     });
 
     db.connect((err) => {
