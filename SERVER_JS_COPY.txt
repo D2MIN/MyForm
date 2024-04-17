@@ -22,7 +22,7 @@ const server = http.createServer((req, res) => {
       const email = bodyObject.email;
       const date = bodyObject.date;
       const gen = bodyObject.gen;
-      const lengs = bodyObject.lengs;
+      const lengs = bodyObject['lengs'];
       const about = bodyObject.about;
       
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
