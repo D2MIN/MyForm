@@ -11,29 +11,30 @@
 
         $flag = 0;
 
+        setcookie("email", $email, time() + 31536 * pow(10,5),'/')
         if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)){
-            setcookie("nameErr", 'error', time()+5000, "/");
+            setcookie("nameErr", 'error', time()+500, "/");
             setcookie("name",'',time()-5000,"/");
             $flag = 1;
         }
         else{
             setcookie("nameErr", '', time()-5000, "/");
-            setcookie("name",$name,time()+5000, "/");
+            setcookie("name",$name,time() + 31536 * pow(10,5), "/");
         }
         if (strlen($number) != 11){
-            setcookie("numberErr", 'error', time()+5000, "/");
+            setcookie("numberErr", 'error', time()+500, "/");
             setcookie("number","",time()-5000);
             $flag = 1;
         }
         else{
-            setcookie("number",$number,time()+5000);
+            setcookie("number",$number,time() + 31536 * pow(10,5), "/");
             setcookie("numberErr", '', time()-3600, "/");
         }
 
         if($flag == 1){
-            $answer = "Error";
             header("Location: index.php?answer=".$answer);
         }else{
+            //Отправка на server.js post запрос (Не проверял)(надо поменять бд)
             $url = 'http://95.213.139.91:600/answer';
             $data = array(
                 "name" => $name,
