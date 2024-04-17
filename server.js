@@ -63,7 +63,7 @@ const server = http.createServer((req, res) => {
         INSERT INTO user_lengs(user_id, leng_id)
         SELECT ${userId}, lengs.id
         FROM lengs
-        WHERE lengs.leng = '${lengs[leng]}'
+        WHERE lengs.leng = '${lengs[leng]}';
         `;
 
         //отправка sql запроса
