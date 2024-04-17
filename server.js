@@ -49,33 +49,26 @@ const server = http.createServer((req, res) => {
       //составление sql запроса
       let userId = '';
       let sql = 'INSERT INTO users(name, number, mail, date, gen, about) VALUES(?, ?, ?, ?, ?, ?)';
-      db.query(sql, [name, number, email, date, gen, about], (err, res) => {
+      db.query(sql, [name, number, email, date, gen, about], async (err, res) => {
         if (err) throw err;
         console.log("data users save");
         userId = res.insertId;
-        // res.send("data save");
+
+        console.log(lengs);
+        for (leng in lengs) {
+          // составление sql запроса
+          sql = `INSERT INTO user_lengs(user_id, leng_id) SELECT ${userId}, lengs.id FROM lengs WHERE lengs.leng = '${lengs[leng]}'`;
+
+          // отправка sql запроса
+          await new Promise((resolve, reject) => {
+            db.query(sql, (err, res) => {
+              if (err) reject(err);
+              resolve();
+            });
+          });
+        }
       });
 
-      console.log(lengs)
-      for(leng in lengs){
-        //составление sql запроса
-        sql = `INSERT INTO user_lengs(user_id, leng_id) SELECT ${userId}, lengs.id FROM lengs WHERE lengs.leng = '${lengs[leng]}'`;
-
-        //отправка sql запроса
-        db.query(sql,(err,res)=>{
-          if(err) throw err;
-        });
-      };
-
-      // //составление sql запроса
-      // sql = `INSERT INTO lengs(user_id,pascal,c,cpp,js,py,java,haskel,clijure,prolog,scara) 
-      //        VALUE(LAST_INSERT_ID(),
-      //        '${lengObj['Pascal']}','${lengObj['C']}','${lengObj['C++']}','${lengObj['JavaScript']}','${lengObj['Python']}',
-      //        '${lengObj['Java']}','${lengObj['Haskel']}','${lengObj['Clijure']}','${lengObj['Prolog']}','${lengObj['Scara']}');`;
-      // //отправка sql запроса
-      // db.query(sql,(err,res)=>{
-      //   if(err) throw err;
-      // })
 
       };
     });
