@@ -67,7 +67,7 @@
             $result = file_get_contents($url, false, $context);
             $answer = "Данные отправлены!";
             $answer = urlencode($answer);
-            header("Location: index.php?answer=".$lengs);
+            header("Location: index.php?answer=".$answer);
         }
         
     }
