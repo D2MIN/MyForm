@@ -22,7 +22,7 @@ const server = http.createServer((req, res) => {
       const email = bodyObject.email;
       const date = bodyObject.date;
       const gen = bodyObject.gen;
-      const lengs = bodyObject['leng[]'];
+      const lengs = bodyObject.lengs;
       const about = bodyObject.about;
       console.log(name,number,email,date,gen,lengs,about);
       console.log(bodyObject);

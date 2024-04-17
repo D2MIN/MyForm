@@ -54,7 +54,7 @@
                 "number" => $number,
                 "date" => $date,
                 "gen" => $gen,
-                "lengs[]" => $lengs,
+                "lengs" => $lengs,
                 "about" => $about
             );
             $options = array(
