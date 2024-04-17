@@ -67,7 +67,7 @@
             $answer = "Данные отправлены!";
             $answer = urlencode($answer);
             $strdate = urlencode($strdate);
-            header("Location: index.php?answer=".$answer."&"."strdate=".(intval($date)));
+            header("Location: index.php?answer=".$answer);
         }
         
     }
@@ -84,7 +84,6 @@
 </head>
 <body>
     <h1><?php echo $answer ?></h1>
-    <h1><?php echo $strdate ?></h1>
     <h1>Форма записи в базу данных</h1>
     <form id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
         <div class="body">
