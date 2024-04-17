@@ -59,12 +59,7 @@ const server = http.createServer((req, res) => {
       console.log(lengs)
       for(leng in lengs){
         //составление sql запроса
-        sql = `
-        INSERT INTO user_lengs(user_id, leng_id)
-        SELECT ${userId}, lengs.id
-        FROM lengs
-        WHERE lengs.leng = '${lengs[leng]}';
-        `;
+        sql = `INSERT INTO user_lengs(user_id, leng_id) SELECT ${userId}, lengs.id FROM lengs WHERE lengs.leng = '${lengs[leng]}'`;
 
         //отправка sql запроса
         db.query(sql,(err,res)=>{
