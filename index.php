@@ -31,6 +31,9 @@
             setcookie("number",$number,time()+5000, "/");
             setcookie("numberErr", '', time()-3600, "/");
         }
+        // if(substr($date, 4, 1) == "-"){
+        //     if(int(substr($date, 0, 5)) )
+        // }
 
         if($flag == 1){
             header("Location: index.php?answer=".$answer);
@@ -56,7 +59,7 @@
             $answer = "Данные отправлены!";
             $answer = urlencode($answer);
             $strdate = urlencode($strdate);
-            header("Location: index.php?answer=$answer&strdate=$date");
+            header("Location: index.php?answer=$answer&strdate=".$intval($date));
         }
         
     }
