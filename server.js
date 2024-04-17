@@ -24,9 +24,13 @@ const server = http.createServer((req, res) => {
       const gen = bodyObject.gen;
       const about = bodyObject.about;
       const lengs = [];
-      for(key in bodyObject){
-        console.log(key);
-      };
+      for(let i = 0; i != 11; i++){
+        if(bodyObject[`lengs[${i}]`] != undefined){
+          lengs.push(bodyObject[`lengs[${i}]`]);
+        }else{
+          break;
+        }
+      }
 
       console.log(name,number,email,date,gen,lengs,about);
       console.log(bodyObject);
