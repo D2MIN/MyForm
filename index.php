@@ -113,17 +113,17 @@
                     <div class="langvich_section">
                         <h4>Выберите язык программирования</h4>
                         <select multiple name="leng[]" class="langvich" name="langvich">
-                            <option value="pasc">Pascal</option>
+                            <option value="pasc">Pasc</option>
                             <option value="c">C</option>
                             <option value="c++">C++</option>
-                            <option value="js">JavaScript</option>
+                            <option value="js">JS</option>
                             <option value="php">PHP</option>
-                            <option value="py">Python</option>
+                            <option value="py">Py</option>
                             <option value="java">Java</option>
-                            <option value="hask">Haskel</option>
-                            <option value="cloj">Clojure</option>
-                            <option value="prol">Prolog</option>
-                            <option value="scar">Scara</option>
+                            <option value="hask">Hask</option>
+                            <option value="cloj">Cloj</option>
+                            <option value="prol">Prol</option>
+                            <option value="scar">Scar</option>
                         </select>
                     </div>
                     <div class="textarea">
@@ -138,6 +138,6 @@
             <button class="button" type="submit">Отправить</button>
         </div>
     </form>
-    <a href="http://95.213.139.91:600/tables"><button class="button" type="submit" disabled>Таблицы</button></a>
+    <a href="http://95.213.139.91:600/tables"><button class="button" type="submit" disabled >Таблицы</button></a>
 </body>
 </html>
