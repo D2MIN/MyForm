@@ -113,17 +113,17 @@
                     <div class="langvich_section">
                         <h4>Выберите язык программирования</h4>
                         <select multiple name="leng[]" class="langvich" name="langvich">
-                            <option value="Pascal">Pascal</option>
-                            <option value="C">C</option>
-                            <option value="C++">C++</option>
-                            <option value="JavaScript">JavaScript</option>
-                            <option value="PHP">PHP</option>
-                            <option value="Python">Python</option>
-                            <option value="Java">Java</option>
-                            <option value="Haskel">Haskel</option>
-                            <option value="Clojure">Clojure</option>
-                            <option value="Prolog">Prolog</option>
-                            <option value="Scara">Scara</option>
+                            <option value="pasc">Pascal</option>
+                            <option value="c">C</option>
+                            <option value="c++">C++</option>
+                            <option value="js">JavaScript</option>
+                            <option value="php">PHP</option>
+                            <option value="py">Python</option>
+                            <option value="java">Java</option>
+                            <option value="hask">Haskel</option>
+                            <option value="cloj">Clojure</option>
+                            <option value="prol">Prolog</option>
+                            <option value="scar">Scara</option>
                         </select>
                     </div>
                     <div class="textarea">
@@ -138,6 +138,6 @@
             <button class="button" type="submit">Отправить</button>
         </div>
     </form>
-    <a href="http://95.213.139.91:600/tables"><button class="button" type="submit">Таблицы</button></a>
+    <a href="http://95.213.139.91:600/tables"><button class="button" type="submit" disabled>Таблицы</button></a>
 </body>
 </html>
