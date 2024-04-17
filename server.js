@@ -47,17 +47,20 @@ const server = http.createServer((req, res) => {
       });
 
       //составление sql запроса
+      const userId = '';
       let sql = 'INSERT INTO users(name, number, mail, date, gen, about) VALUES(?, ?, ?, ?, ?, ?)';
       db.query(sql, [name, number, email, date, gen, about], (err, res) => {
         if (err) throw err;
         console.log("data users save");
+        userId = res.insertId;
         // res.send("data save");
       });
 
+      condole.log(lengs)
       for(leng in lengs){
         //составление sql запроса
-        sql = `INSERT INTO user_lengs(user_id, leng_id) SELECT LAST_INSERT_ID(), lengs.id
-                FROM lengs WHERE lengs.leng = "${lengs[leng]}"`;
+        sql = `INSERT INTO user_lengs(user_id, leng_id) SELECT ${userId}, 
+              lengs.id FROM lengs WHERE lengs.leng = "${lengs[leng]}"`;
 
         //отправка sql запроса
         db.query(sql,(err,res)=>{
