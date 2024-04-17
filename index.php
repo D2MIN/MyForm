@@ -1,6 +1,6 @@
 <?php
     $answer = $_GET['answer'];
-    $strdate = $_POST["date"];
+    $strdate = $GET["strdate"];
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST["name"];
         $email = $_POST["email"];
@@ -56,7 +56,7 @@
             $answer = "Данные отправлены!";
             $answer = urlencode($answer);
             $strdate = urlencode($strdate);
-            header("Location: index.php?answer=$answer&strdate=$strdate");
+            header("Location: index.php?answer=$answer&strdate=$date");
         }
         
     }
