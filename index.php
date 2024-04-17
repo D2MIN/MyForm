@@ -11,7 +11,7 @@
 
         $flag = 0;
 
-        setcookie("email", $email, time()+31536,"/");
+        // setcookie("email", $email, time()+31536,"/");
         if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)){
             setcookie("nameErr", 'error', time()+500, "/");
             setcookie("name",'',time()-5000,"/");
