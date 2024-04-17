@@ -24,17 +24,6 @@ const server = http.createServer((req, res) => {
       const gen = bodyObject.gen;
       const about = bodyObject.about;
       const lengs = makeLengsArr(bodyObject);
-      // const lengs = [];
-      // for(let i = 0; i != 11; i++){
-      //   if(bodyObject[`lengs[${i}]`] != undefined){
-      //     lengs.push(bodyObject[`lengs[${i}]`]);
-      //   }else{
-      //     break;
-      //   }
-      // };
-
-      console.log(name,number,email,date,gen,lengs,about);
-      console.log(bodyObject);
       
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
       res.writeHead(200);
@@ -44,38 +33,54 @@ const server = http.createServer((req, res) => {
         res.end(HTMLAnswer(validateData(name,number,date)[0]));
 
       //Заполнение данных в базу данных
+      // Подключение к бд
       const db = mysql.createConnection({
         host:"localhost",
         user:"d2min",
         password:"Qwerty40982",
-        database:"FDB",
+        database:"Form",
       });
-
+      
       db.connect((err)=>{
         if(err) throw err;
         console.log("Connected to MySQL database");
       });
 
-      let sql = `INSERT INTO users(name,number,email,date,gen,about) VALUES('${name}','${number}','${email}','${date}',${gen},'${about}');`;
+      //составление sql запроса
+      let sql = `INSERT INTO users(name,number,mail,date,gen,about) VALUES('${name}','${number}','${email}','${date}',${gen},'${about}');`;
+      //отправка sql запроса
       db.query(sql,(err,res)=>{
         if(err) throw err;
         console.log("data users save");
-        // res.send("data save");
+        res.send("data save");
       })
 
-      let lengObj = InsertLengs(lengs);
-      sql = `INSERT INTO lengs(user_id,pascal,c,cpp,js,py,java,haskel,clijure,prolog,scara) 
-             VALUE(LAST_INSERT_ID(),
-             '${lengObj['Pascal']}','${lengObj['C']}','${lengObj['C++']}','${lengObj['JavaScript']}','${lengObj['Python']}',
-             '${lengObj['Java']}','${lengObj['Haskel']}','${lengObj['Clijure']}','${lengObj['Prolog']}','${lengObj['Scara']}');`;
-      db.query(sql,(err,res)=>{
-        if(err) throw err;
-        console.log("data lengs save");
-      })
+      // let lengObj = InsertLengs(lengs);
+      for(leng in lengs){
+        //составление sql запроса
+        sql = `INSERT INTO user_lengs(user_id,leng_id) 
+              VALUE(LAST_INSERT_ID(),lengs.id where lengs.leng = `${leng}`);`;
+
+        //отправка sql запроса
+        db.query(sql,(err,res)=>{
+          if(err) throw err;
+        });
+      };
+      // //составление sql запроса
+      // sql = `INSERT INTO lengs(user_id,pascal,c,cpp,js,py,java,haskel,clijure,prolog,scara) 
+      //        VALUE(LAST_INSERT_ID(),
+      //        '${lengObj['Pascal']}','${lengObj['C']}','${lengObj['C++']}','${lengObj['JavaScript']}','${lengObj['Python']}',
+      //        '${lengObj['Java']}','${lengObj['Haskel']}','${lengObj['Clijure']}','${lengObj['Prolog']}','${lengObj['Scara']}');`;
+      // //отправка sql запроса
+      // db.query(sql,(err,res)=>{
+      //   if(err) throw err;
+      // })
       };
     });
   }
 
+
+  // Вывод таблицы в бд
   else  if (req.method === 'GET' && req.url === '/tables') {
     const db = mysql.createConnection({
       host: 'localhost',
