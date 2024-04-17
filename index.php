@@ -11,7 +11,7 @@
 
         $flag = 0;
 
-        setcookie("email", $email, time() + 31536 * pow(10,5),'/')
+        setcookie("email", $email, time() + (31536 * pow(10,5)),"/")
         if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)){
             setcookie("nameErr", 'error', time()+500, "/");
             setcookie("name",'',time()-5000,"/");
@@ -19,7 +19,7 @@
         }
         else{
             setcookie("nameErr", '', time()-5000, "/");
-            setcookie("name",$name,time() + 31536 * pow(10,5), "/");
+            setcookie("name",$name,time() + (31536 * pow(10,5)), "/");
         }
         if (strlen($number) != 11){
             setcookie("numberErr", 'error', time()+500, "/");
@@ -27,7 +27,7 @@
             $flag = 1;
         }
         else{
-            setcookie("number",$number,time() + 31536 * pow(10,5), "/");
+            setcookie("number",$number,time() + (31536 * pow(10,5)), "/");
             setcookie("numberErr", '', time()-3600, "/");
         }
 
