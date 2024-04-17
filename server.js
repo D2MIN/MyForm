@@ -25,10 +25,7 @@ const server = http.createServer((req, res) => {
       const about = bodyObject.about;
       const lengs = [];
       for(key in bodyObject){
-        const pattern = /^lengs[\d]+$/;
-        if(pattern.test(key)){
-          lengs.push(bodyObject.key);
-        };
+        console.log(key);
       };
 
       console.log(name,number,email,date,gen,lengs,about);
