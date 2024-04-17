@@ -99,7 +99,7 @@
                     <!-- Почта -->
                     <input name="email" id="email" type="email" value="<?php echo $_COOKIE["email"]; ?>" placeholder="Введите почту" required>
                     <!-- Дата -->
-                    <input name="date" id="date" type="date" value="<?php $_COOKIE['date']?>" placeholder="" required>
+                    <input class="span <?php $_COOKIE['dateErr']?>" name="date" id="date" type="date" value="<?php $_COOKIE['date']?>" placeholder="" required>
                         <span class="span <?php echo $_COOKIE['dateErr'] ?>"> <?php if(isset($_COOKIE['dateErr'])) echo "Некорректная дата" ?> </span>
                 </div>
                 <div class="cheked">
