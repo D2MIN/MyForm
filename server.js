@@ -25,6 +25,7 @@ const server = http.createServer((req, res) => {
       const lengs = bodyObject['leng[]'];
       const about = bodyObject.about;
       console.log(name,number,email,date,gen,lengs,about);
+      console.log(bodyObject);
       
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
       res.writeHead(200);
