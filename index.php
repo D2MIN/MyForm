@@ -13,7 +13,7 @@
 
         // setcookie("email", $email, time()+31536,"/");
         if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)){
-            setcookie("nameErr", 'error', time()+500, "/");
+            setcookie("nameErr", 'error', time()+5000, "/");
             setcookie("name",'',time()-5000,"/");
             $flag = 1;
         }
@@ -22,7 +22,7 @@
             setcookie("name",$name,time() + 31536), "/");
         }
         if (strlen($number) != 11){
-            setcookie("numberErr", 'error', time()+500, "/");
+            setcookie("numberErr", 'error', time()+5000, "/");
             setcookie("number","",time()-5000);
             $flag = 1;
         }
