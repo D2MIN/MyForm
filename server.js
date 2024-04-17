@@ -51,7 +51,7 @@ const server = http.createServer((req, res) => {
       db.query(sql, [name, number, email, date, gen, about], (err, res) => {
         if (err) throw err;
         console.log("data users save");
-        res.send("data save");
+        // res.send("data save");
 
         // получение id вставленного пользователя
         const userId = res.insertId;
