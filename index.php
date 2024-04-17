@@ -13,27 +13,35 @@
         $flag = 0;
 
         setcookie("email", $email, time()+31536,"/");
+        // Валидация имени
         if (!preg_match('/^[а-яёА-ЯЁ]+$/u', $name)){
             setcookie("nameErr", 'error', time()+5000, "/");
-            setcookie("name",'',time()-5000,"/");
+            setcookie("name", '', time()-5000,"/");
             $flag = 1;
         }
         else{
             setcookie("nameErr", '', time()-5000, "/");
-            setcookie("name",$name,time()+5000, "/");
+            setcookie("name", $name, time()+5000, "/");
         }
+        // Валидация номера
         if (strlen($number) != 11){
             setcookie("numberErr", 'error', time()+5000, "/");
-            setcookie("number","",time()-5000);
+            setcookie("number", "", time()-5000);
             $flag = 1;
         }
         else{
-            setcookie("number",$number,time()+5000, "/");
+            setcookie("number", $number, time()+5000, "/");
             setcookie("numberErr", '', time()-3600, "/");
         }
-        // if(substr($date, 4, 1) == "-"){
-        //     if(int(substr($date, 0, 5)) )
-        // }
+        // Валидация даты
+        if(intval($date) < 1924 || intval($date) > 2008){
+            setcookie("dateErr", 'error', time()+5000);
+            setcookie("date", '', time()-5000,"/");
+            $flag = 1;
+        }else{
+            setcookie("dateErr", '', time()-5000);
+            setcookie("date", $date, time()-5000,"/");
+        }
 
         if($flag == 1){
             header("Location: index.php?answer=".$answer);
@@ -82,12 +90,17 @@
         <div class="body">
             <div class="info">
                 <div class="input">
-                    <input class="<?php echo $_COOKIE['nameErr'] ?>" name="name" id="name" type="text" value="<?php echo $_COOKIE["name"]; ?>" placeholder="Имя" required>
+                    <!-- Имя -->
+                    <input class="<?php echo $_COOKIE['nameErr'] ?>" name="name" id="name" type="text" value="<?php echo $_COOKIE["name"]; ?>" placeholder="Введите имя" required>
                         <span class="span <?php echo $_COOKIE['nameErr'] ?>"> <?php if(isset($_COOKIE['nameErr'])) echo "Неверные символы" ?> </span>
-                    <input class="<?php echo $_COOKIE['numberErr'] ?>" name="number" id="number" type="number" value="<?php echo $_COOKIE["number"]; ?>" placeholder="Номер" required>
+                    <!-- Номер -->
+                    <input class="<?php echo $_COOKIE['numberErr'] ?>" name="number" id="number" type="number" value="<?php echo $_COOKIE["number"]; ?>" placeholder="Введите телефон" required>
                         <span class="span <?php echo $_COOKIE['numberErr'] ?>"> <?php if(isset($_COOKIE['numberErr'])) echo "Неправильное количество цифр" ?> </span>
-                    <input name="email" id="email" type="email" value="<?php echo $_COOKIE["email"]; ?>" placeholder="Почта" required>
-                    <input name="date" id="date" type="date" placeholder="" required>
+                    <!-- Почта -->
+                    <input name="email" id="email" type="email" value="<?php echo $_COOKIE["email"]; ?>" placeholder="Введите почту" required>
+                    <!-- Дата -->
+                    <input name="date" id="date" type="date" value="<?php $_COOKIE['date']?>" placeholder="" required>
+                        <span class="span <?php echo $_COOKIE['dateErr'] ?>"> <?php if(isset($_COOKIE['dateErr'])) echo "Некорректная дата" ?> </span>
                 </div>
                 <div class="cheked">
                     <div class="radio_pol">
