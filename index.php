@@ -1,6 +1,6 @@
 <?php
     $answer = $_GET['answer'];
-    $strdate = $_GET['strdate'];
+    $strdate = $_POST["date"];
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST["name"];
         $email = $_POST["email"];
