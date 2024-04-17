@@ -59,7 +59,7 @@ const server = http.createServer((req, res) => {
       for(leng in lengs){
         //составление sql запроса
         sql = `INSERT INTO user_lengs(user_id,leng_id) 
-              VALUE(LAST_INSERT_ID(),lengs.id where lengs.leng = `${leng}`);`;
+              VALUE(LAST_INSERT_ID(),lengs.id where lengs.leng = ${leng});`;
 
         //отправка sql запроса
         db.query(sql,(err,res)=>{
