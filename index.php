@@ -40,7 +40,7 @@
             $flag = 1;
         }else{
             setcookie("dateErr", '', time()-5000,'/');
-            setcookie("date", $date, time()-5000,"/");
+            setcookie("date", $date, time()+5000,"/");
         }
 
         if($flag == 1){
