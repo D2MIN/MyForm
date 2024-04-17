@@ -56,7 +56,7 @@ const server = http.createServer((req, res) => {
         // res.send("data save");
       });
 
-      condole.log(lengs)
+      console.log(lengs)
       for(leng in lengs){
         //составление sql запроса
         sql = `INSERT INTO user_lengs(user_id, leng_id) SELECT ${userId}, 
