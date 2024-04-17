@@ -22,8 +22,15 @@ const server = http.createServer((req, res) => {
       const email = bodyObject.email;
       const date = bodyObject.date;
       const gen = bodyObject.gen;
-      const lengs = bodyObject.lengs;
       const about = bodyObject.about;
+      const lengs = [];
+      for(key in bodyObject){
+        const pattern = /^lengs[\d]+$/;
+        if(pattern.test(str)){
+          lengs.push(bodyObject.key);
+        };
+      };
+      
       console.log(name,number,email,date,gen,lengs,about);
       console.log(bodyObject);
       
