@@ -35,11 +35,11 @@
         }
         // Валидация даты
         if(intval($date) < 1924 || intval($date) > 2008){
-            setcookie("dateErr", 'error', time()+5000);
+            setcookie("dateErr", 'error', time()+5000,"/");
             setcookie("date", '', time()-5000,"/");
             $flag = 1;
         }else{
-            setcookie("dateErr", '', time()-5000);
+            setcookie("dateErr", '', time()-5000,'/');
             setcookie("date", $date, time()-5000,"/");
         }
 
