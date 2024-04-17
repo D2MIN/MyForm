@@ -59,7 +59,7 @@
             $answer = "Данные отправлены!";
             $answer = urlencode($answer);
             $strdate = urlencode($strdate);
-            header("Location: index.php?answer=$answer&strdate=".$intval($date));
+            header("Location: index.php?answer=".$answer."&"."strdate=".$intval($date));
         }
         
     }
