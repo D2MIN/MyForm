@@ -1,5 +1,6 @@
 <?php
     $answer = $_GET['answer'];
+    $strdate = $_GET['date'];
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST["name"];
         $email = $_POST["email"];
@@ -30,7 +31,6 @@
             setcookie("number",$number,time()+5000, "/");
             setcookie("numberErr", '', time()-3600, "/");
         }
-        echo $data;
 
         if($flag == 1){
             header("Location: index.php?answer=".$answer);
@@ -54,7 +54,7 @@
             $context  = stream_context_create($options);
             $result = file_get_contents($url, false, $context);
             $answer = "Данные отправлены!";
-            header("Location: index.php?answer=".$answer);
+            header("Location: index.php?answer=".$answer,$strdate);
         }
         
     }
@@ -71,6 +71,7 @@
 </head>
 <body>
     <h1><?php echo $answer ?></h1>
+    <h1><?php echo $date ?></h1>
     <h1>Форма записи в базу данных</h1>
     <form id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
         <div class="body">
