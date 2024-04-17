@@ -53,6 +53,7 @@
                 "email" => $email,
                 "number" => $number,
                 "date" => $date,
+                "gen" => $gen,
                 "lengs" => $lengs,
                 "about" => $about
             );
