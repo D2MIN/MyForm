@@ -14,7 +14,7 @@ const server = http.createServer((req, res) => {
     req.on('end', () => {
       // Объединить куски в строку и распарсить в объект
       const bodyString = Buffer.concat(body).toString();
-      const bodyObject = querystring.parse(body);
+      const bodyObject = querystring.parse(bodyString);
 
       // Получить данные из объекта
       const name = bodyObject.name;
@@ -22,7 +22,7 @@ const server = http.createServer((req, res) => {
       const email = bodyObject.email;
       const date = bodyObject.date;
       const gen = bodyObject.gen;
-      const lengs = bodyObject.lengs;
+      const lengs = bodyObject['leng[]'];
       const about = bodyObject.about;
       console.log(name,number,email,date,gen,lengs,about);
       
