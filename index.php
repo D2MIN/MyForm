@@ -6,7 +6,7 @@ $login = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXY
 $pass = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, $password_length);
 
 echo "Login: " . $login;
-echo "\nPassword: " . $password;
+echo "\nPassword: " . $pass;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['name'];
     $password = $_POST['password'];
