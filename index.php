@@ -6,7 +6,7 @@
     if($username == 'admin' && $password == "admin"){
         header('Location: /changeForm');
     }else{
-        header('Location: /index.php');
+        header('Location: /MyForm');
     };
 
 ?>
