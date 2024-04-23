@@ -41,6 +41,7 @@ button:hover {
 form {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 form input {
   margin-top: 20px;
