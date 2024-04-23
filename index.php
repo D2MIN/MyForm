@@ -3,11 +3,10 @@
     $username = $_GET['name'];
     $password = $_GET['password'];
 
-    echo $username.$password;
     if($username == 'admin' && $password == "admin"){
-        header('/changeForm');
+        header('Location: /changeForm');
     }else{
-        header('/');
+        header('Location: /');
     };
 
 ?>
