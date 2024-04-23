@@ -1,5 +1,14 @@
-<?PHP 
-    echo "Hello";
+<?php 
+
+    $username = $_GET['name'];
+    $password = $_GET['password'];
+
+    if($username == 'admin' && $password == "admin"){
+        header('https://www.youtube.com/watch?v=sEpXl-AbvrA&t=987s');
+    }else{
+        header('/');
+    };
+
 ?>
 
 <!DOCTYPE html>
