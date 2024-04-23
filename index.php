@@ -3,9 +3,12 @@
     $username = $_GET['name'];
     $password = $_GET['password'];
 
+    echo $username.$password;
     if($username == 'admin' && $password == "admin"){
+        echo $username.$password;
         header('https://www.youtube.com/watch?v=sEpXl-AbvrA&t=987s');
     }else{
+        echo $username.$password;
         header('/');
     };
 
