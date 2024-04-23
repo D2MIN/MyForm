@@ -15,9 +15,9 @@
                 <input name="password" type="password">
                 <div class="buttons">
                     <button>Вход</button>
-                    <a href="http://95.213.139.91/MyForm/form.php"><button>Я новый пользователь</button></a>
                 </div>
             </form>
+            <a href="http://95.213.139.91/MyForm/form.php"><button>Я новый пользователь</button></a>
         </div>
     </div>
 </body>
