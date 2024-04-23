@@ -1,14 +1,16 @@
-<?php 
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['name'];
+    $password = $_POST['password'];
 
-    $username = $_GET['name'];
-    $password = $_GET['password'];
-
-    if($username == 'admin' && $password == "admin"){
-        header('Location: changeForm');
-    }else{
+    if ($username == 'admin' && $password == 'admin') {
+        header('Location: changeForm.php');
+    } else {
         header('Location: MyForm');
-    };
-
+    }
+} else {
+    header('Location: MyForm');
+}
 ?>
 
 <!DOCTYPE html>
