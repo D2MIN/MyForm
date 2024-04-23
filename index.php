@@ -5,10 +5,8 @@
 
     echo $username.$password;
     if($username == 'admin' && $password == "admin"){
-        echo "Переброс";
-        header('https://www.youtube.com/watch?v=sEpXl-AbvrA&t=987s');
+        header('/changeForm');
     }else{
-        echo $username.$password;
         header('/');
     };
 
