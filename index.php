@@ -6,10 +6,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($username == 'admin' && $password == 'admin') {
         header('Location: changeForm.php');
     } else {
-        header('Location: MyForm');
+        header('Location: /');
     }
 } else {
-    header('Location: MyForm');
+    header('Location: /');
 }
 ?>
 
