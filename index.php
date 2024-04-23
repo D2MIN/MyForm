@@ -5,7 +5,7 @@
 
     echo $username.$password;
     if($username == 'admin' && $password == "admin"){
-        echo $username.$password;
+        echo "Переброс";
         header('https://www.youtube.com/watch?v=sEpXl-AbvrA&t=987s');
     }else{
         echo $username.$password;
