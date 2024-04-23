@@ -1,9 +1,17 @@
 <?php
+$login_length = 6;
+$password_length = 5;
+
+$login = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, $login_length);
+$password = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, $password_length);
+
+echo "Login: " . $login;
+echo "\nPassword: " . $password;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['name'];
     $password = $_POST['password'];
 
-    if ($username == "admin" && $password == "admin") {
+    if ($username == $login && $password == $password) {
         header('Location: /');
     }
 }
