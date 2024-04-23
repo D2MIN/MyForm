@@ -1,3 +1,7 @@
+<?PHP 
+    echo "Hello";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
