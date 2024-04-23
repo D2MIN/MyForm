@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="loginForm">
             <h1>Войдите что бы менять таблицу</h1>
             <form action="">
-                <input name="name" type="text" value="<?php echo $username; ?>>
+                <input name="name" type="text" value="<?php echo $username; ?>">
                 <input name="password" type="password">
                 <div class="buttons">
                     <button>Вход</button>
