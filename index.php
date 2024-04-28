@@ -5,14 +5,14 @@ $pass = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
 
 echo "Login: " . $login;
 echo "\nPassword: " . $pass;
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['name'];
-    $password = $_POST['password'];
+// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+//     $username = $_POST['name'];
+//     $password = $_POST['password'];
 
-    if ($username == $login && $password == $pass) {
-        header('Location: /');
-    }
-}
+//     if ($username == $login && $password == $pass) {
+//         header('Location: /');
+//     }
+// }
 ?>
 
 <!DOCTYPE html>

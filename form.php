@@ -147,6 +147,6 @@
             <button class="button" type="submit">Отправить</button>
         </div>
     </form>
-    <a href="http://95.213.139.91:600/tables"><button class="button" type="submit" disabled >Таблицы</button></a>
+    <!-- <a href="http://95.213.139.91:600/tables"><button class="button" type="submit" disabled >Таблицы</button></a> -->
 </body>
 </html>
