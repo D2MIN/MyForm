@@ -23,9 +23,9 @@ const server = http.createServer((req, res) => {
       const date = bodyObject.date;
       const gen = bodyObject.gen;
       const about = bodyObject.about;
-      const lengs = makeLengsArr(bodyObject);
       const login = bodyObject.login;
       const pass = bodyObject.pass;
+      const lengs = makeLengsArr(bodyObject);
       
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
       res.writeHead(200);
