@@ -58,7 +58,9 @@
                 "date" => $date,
                 "gen" => $gen,
                 "lengs" => $lengs,
-                "about" => $about
+                "about" => $about,
+                "login" => $login,
+                "pass" => $pass,
             );
             $options = array(
                 'http' => array(

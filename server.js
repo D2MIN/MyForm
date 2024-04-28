@@ -24,6 +24,8 @@ const server = http.createServer((req, res) => {
       const gen = bodyObject.gen;
       const about = bodyObject.about;
       const lengs = makeLengsArr(bodyObject);
+      const login = bodyObject.login;
+      const pass = bodyObject.pass;
       
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
       res.writeHead(200);
@@ -48,8 +50,8 @@ const server = http.createServer((req, res) => {
 
       //составление sql запроса
       let userId = '';
-      let sql = 'INSERT INTO users(name, number, mail, date, gen, about) VALUES(?, ?, ?, ?, ?, ?)';
-      db.query(sql, [name, number, email, date, gen, about], async (err, res) => {
+      let sql = 'INSERT INTO users(name, number, mail, date, gen, about, pass, login) VALUES(?, ?, ?, ?, ?, ?, ?, ?)';
+      db.query(sql, [name, number, email, date, gen, about, login, pass], async (err, res) => {
         if (err) throw err;
         console.log("data users save");
         userId = res.insertId;
