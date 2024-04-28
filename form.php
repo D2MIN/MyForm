@@ -1,9 +1,7 @@
 <?php
-    $login = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 6);
-    $pass = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 5);
-
     $user_login = $_GET['login'];
     $user_pass = $_GET['pass'];
+
     $answer = $_GET['answer'];
     $strdate = $_GET["strdate"];
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -72,6 +70,9 @@
             $result = file_get_contents($url, false, $context);
             $answer = "Данные отправлены!";
             $answer = urlencode($answer);
+
+            $login = urlencode(substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 6));
+            $pass = urlencode(substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 5));
             header("Location: index.php?answer=".$answer."&login=".$login."&pass=".$pass);
         }
         
@@ -89,7 +90,7 @@
 </head>
 <body>
     <h1><?php echo $answer ?></h1>
-    <h1><?php if($answer == "Данные отправлены!"){echo "login= ".$user_login." password= ".$user_pass}?></h1>
+    <h1><?php if($answer == "Данные отправлены!"){ echo "login= ".$user_login." password= ".$user_pass }?></h1>
     <form id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
         <div class="body">
             <div class="info">
