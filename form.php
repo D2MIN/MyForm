@@ -93,7 +93,7 @@
     <h1>
         <?php
             if($answer != ""){
-                echo "Логин-".$user_login."  Пароль-".$user_pass
+                echo "Логин-".$user_login."  Пароль-".$user_pass;
             } 
         ?>
     </h1>
