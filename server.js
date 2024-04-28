@@ -112,6 +112,6 @@ const server = http.createServer((req, res) => {
 });
 
 // Запустить сервер на порту 600
-server.listen(200, function() {
+server.listen(600, function() {
   console.log('Сервер запущен на порту 600');
 });
