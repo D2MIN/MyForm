@@ -1,21 +1,21 @@
 <?php
 
-// $login = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 6);
-// $pass = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 5);
+$login = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 6);
+$pass = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 5);
 
-// echo "Login: " . $login;
-// echo "\nPassword: " . $pass;
-// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-//     $username = $_POST['name'];
-//     $password = $_POST['password'];
+echo "Login: " . $login;
+echo "\nPassword: " . $pass;
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['name'];
+    $password = $_POST['password'];
 
-//     if ($username == $login && $password == $pass) {
-//         header('Location: /');
-//     }
-//}
+    if ($username == $login && $password == $pass) {
+        header('Location: /');
+    }
+}
 ?>
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -38,4 +38,4 @@
         </div>
     </div>
 </body>
-</html> -->
+</html>
