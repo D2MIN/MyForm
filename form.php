@@ -70,7 +70,7 @@
             $result = file_get_contents($url, false, $context);
             $answer = "Данные отправлены!";
             $answer = urlencode($answer);
-            header("Location: index.php?answer=".$answer."&login=".$login."&pass="$pass);
+            header("Location: index.php?answer=".$answer."&login=".$login."&pass=".$pass);
         }
         
     }
