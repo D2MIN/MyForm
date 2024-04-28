@@ -94,7 +94,7 @@
     <h1>
 
     </h1>
-    <form id="form" action="form.php" method="POST">
+    <form id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
         <div class="body">
             <div class="info">
                 <div class="input">
