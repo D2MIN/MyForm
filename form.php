@@ -73,7 +73,7 @@
 
             $login = urlencode(substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 6));
             $pass = urlencode(substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 5));
-            header("Location: form.php?answer=".$answer);
+            header("Location: form.php?answer=".$answer."&login=".$login."&pass=".$pass);
             //."&login=".$login."&pass=".$pass
         }
         
