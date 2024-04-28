@@ -91,7 +91,7 @@
 <body>
     <h1><?php echo $answer ?></h1>
     <h1>
-
+        <?php echo "Логин - ".$user_login." Пароль - ".$user_pass?>
     </h1>
     <form id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
         <div class="body">
