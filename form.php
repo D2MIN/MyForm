@@ -86,7 +86,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Форма для записи</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     <h1><?php echo $answer ?></h1>
