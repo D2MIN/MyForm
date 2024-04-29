@@ -9,9 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = new mysqli('localhost', 'd2min', 'Qwerty40982', 'Form');
 
     // Запрос к базе данных
-    $result = $db->query("SELECT pass FROM users WHERE login = $login");
+    $result = $db->query("SELECT pass FROM users WHERE login = '$login'");
+    $row = $result->fetch_assoc();
+    $pass = $row['pass'];
 
-    if($password == $result){
+    if($password == $pass){
         // Сохранение данных в сессию
         $_SESSION['login'] = $login;
     
@@ -20,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }else{
         echo "Неправильный пароль";
     }
-
 }
 ?>
 
