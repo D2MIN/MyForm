@@ -1,5 +1,6 @@
 <?php
     $password = $_GET['password'];
+    $id = $_GET['id'];
 
     $answer = $_GET['answer'];
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -53,7 +54,7 @@
                 die('Error connecting to database: ' . mysqli_connect_error());
             }
 
-            $result = $db->query("UPDATE users set name='$name', number='$number', email='$email', date='$date', gen='$gen', about='$about' where id = '$id'")
+            $result = $db->query("UPDATE users SET name='$name', number='$number', email='$email', date='$date', gen='$gen', about='$about' WHERE id = '$id'");
 
             $answer == "Форма успешно изменена !";
             header("Location: change.php?answer=".$answer);
