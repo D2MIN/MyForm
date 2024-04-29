@@ -1,10 +1,21 @@
 <?php
 
-$login = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 6);
-$pass = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 5);
+$login = $_POST['login'];
 
-echo "Login: " . $login;
-echo "\nPassword: " . $pass;
+session_start();
+// Подключение к базе данных
+$db = new mysqli('localhost', 'd2min', 'Qwerty40982', 'Form');
+
+// Запрос к базе данных
+$result = $db->query("SELECT pass FROM user WHERE login = $login");
+
+// Сохранение данных в сессию
+$_SESSION['login'] = $login;
+
+// Использование данных из сессии
+echo "Hello, " . $_SESSION['login'];
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['name'];
     $password = $_POST['password'];
@@ -28,8 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="loginForm">
             <h1>Войдите что бы менять таблицу</h1>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" >
-                <input name="name" type="text" value="<?php echo $username; ?>">
-                <input name="password" type="password">
+                <input name="login" type="text" placeholder="Login">
+                <input name="password" type="password" placeholder="Password">
                 <div class="buttons">
                     <button>Вход</button>
                 </div>
