@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = new mysqli('localhost', 'd2min', 'Qwerty40982', 'Form');
 
     // Запрос к базе данных
-    $result = $db->query("SELECT pass FROM user WHERE login = $login");
+    $result = $db->query("SELECT pass FROM users WHERE login = $login");
 
     if($password == $result){
         // Сохранение данных в сессию
