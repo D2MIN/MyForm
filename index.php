@@ -10,10 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = new mysqli('localhost', 'd2min', 'Qwerty40982', 'Form');
     if ($db->connect_error) {
         die("Connection failed: " . $db->connect_error);
-        
+    }
         // Запрос к базе данных
         // $result = $db->query("SELECT pass FROM users WHERE login = '$login'");
-        // }
         // $row = $result->fetch_assoc();
         // $pass = $row['pass'];
         
