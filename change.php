@@ -53,7 +53,7 @@
                 die('Error connecting to database: ' . mysqli_connect_error());
             }
 
-            $result = $db->query("UPDATE users set name=$name, number=$number, email=$email, date=$date, gen=$gen, about=$about")
+            $result = $db->query("UPDATE users set name='$name', number='$number', email='$email', date='$date', gen='$gen', about='$about' where id = 'id")
 
             $answer == "Форма успешно изменена !";
             header("Location: change.php?answer=".$answer);
