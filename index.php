@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     
     // Подключение к базе данных
-    $db = mysqli_connect('localhost', 'my_user', 'my_password', 'my_db');
+    $db = mysqli_connect('localhost', 'd2min', 'Qwerty40982', 'Form');
     if (!$db) {
         die('Error connecting to database: ' . mysqli_connect_error());
     }
