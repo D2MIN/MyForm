@@ -4,6 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $login = $_POST["login"];
     $password = $_POST["password"];
     
+    session_start();
     
     // Подключение к базе данных
     $db = mysqli_connect('localhost', 'd2min', 'Qwerty40982', 'Form');
@@ -14,15 +15,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //Запрос к базе данных
     $result = $db->query("SELECT pass FROM users WHERE login = '$pass'");
+    $row = $result->fetch_assoc();
+    $pass = $row['pass'];
+    // echo $pass;
     // if ($result->num_rows > 0) {
-    //     $row = $result->fetch_assoc();
-    //     $pass = $row['pass'];
     //     // далее идет проверка пароля и т.д.
     // } else {
     //     echo "Пользователь с таким логином не найден";
     // }
     
-    session_start();
     if($password == $pass){
         // Сохранение данных в сессию
         $_SESSION['login'] = $login;
