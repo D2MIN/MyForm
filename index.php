@@ -1,13 +1,14 @@
 <?php
 
-$login = $_POST['login'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+$login = $_POST["login"];
 
 session_start();
 // Подключение к базе данных
-$db = new mysqli('localhost', 'd2min', 'Qwerty40982', 'Form');
+// $db = new mysqli('localhost', 'd2min', 'Qwerty40982', 'Form');
 
 // Запрос к базе данных
-$result = $db->query("SELECT pass FROM user WHERE login = $login");
+// $result = $db->query("SELECT pass FROM user WHERE login = $login");
 
 // Сохранение данных в сессию
 $_SESSION['login'] = $login;
@@ -16,13 +17,6 @@ $_SESSION['login'] = $login;
 echo "Hello, " . $_SESSION['login'];
 
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['name'];
-    $password = $_POST['password'];
-
-    if ($username == $login && $password == $pass) {
-        header('Location: /');
-    }
 }
 ?>
 
