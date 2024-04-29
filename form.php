@@ -49,7 +49,8 @@
         if($flag == 1){
             header("Location: form.php?answer=".$answer);
         }else{
-            //Отправка на server.js post запрос (Не проверял)
+            $login = urlencode(substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 6));
+            $pass = urlencode(substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 5));
             $url = 'http://95.213.139.91:600/answer';
             $data = array(
                 "name" => $name,
@@ -72,9 +73,6 @@
             $result = file_get_contents($url, false, $context);
             $answer = "Данные отправлены!";
             $answer = urlencode($answer);
-
-            $login = urlencode(substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 6));
-            $pass = urlencode(substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 5));
             header("Location: form.php?answer=".$answer."&login=".$login."&pass=".$pass);
             //."&login=".$login."&pass=".$pass
         }
