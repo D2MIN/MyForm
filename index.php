@@ -10,10 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!$db) {
         die('Error connecting to database: ' . mysqli_connect_error());
     }
+    mysqli_set_charset($db, 'utf8');
+
     // Запрос к базе данных
-    // $result = $db->query("SELECT pass FROM users WHERE login = '$login'");
-    // $row = $result->fetch_assoc();
-    // $pass = $row['pass'];
+    $result = $db->query("SELECT pass FROM users WHERE login = '$login'");
+    $row = $result->fetch_assoc();
+    $pass = $row['pass'];
     
     session_start();
     if($password == "123"){
