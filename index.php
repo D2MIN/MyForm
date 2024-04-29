@@ -11,17 +11,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Запрос к базе данных
     $result = $db->query("SELECT pass FROM users WHERE login = '$login'");
     $row = $result->fetch_assoc();
-    $pass = $row['pass'];
+    $hash = $row['pass'];
 
-    if($password == $pass){
+    if(password_verify($password, $hash)){
         // Сохранение данных в сессию
         $_SESSION['login'] = $login;
-    
+
         // Использование данных из сессии
         echo "Hello, " . $_SESSION['login'];
-    }else{
+    } else {
         echo "Неправильный пароль";
     }
+
 }
 ?>
 
