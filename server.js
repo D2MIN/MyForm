@@ -23,8 +23,10 @@ const server = http.createServer((req, res) => {
       const date = bodyObject.date;
       const gen = bodyObject.gen;
       const about = bodyObject.about;
+      // Почему то NULL
       const login = bodyObject.login;
       const pass = bodyObject.pass;
+      console.log(loign, pass);
       const lengs = makeLengsArr(bodyObject);
       
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
