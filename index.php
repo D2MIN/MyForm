@@ -3,19 +3,20 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $login = $_POST["login"];
     $password = $_POST["password"];
-
+    
     session_start();
+
     // Подключение к базе данных
     $db = new mysqli('localhost', 'd2min', 'Qwerty40982', 'Form');
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-
-    // Запрос к базе данных
-    // $result = $db->query("SELECT pass FROM users WHERE login = '$login'");
-    // }
-    // $row = $result->fetch_assoc();
-    // $pass = $row['pass'];
-
+    if ($db->connect_error) {
+        die("Connection failed: " . $db->connect_error);
+        
+        // Запрос к базе данных
+        // $result = $db->query("SELECT pass FROM users WHERE login = '$login'");
+        // }
+        // $row = $result->fetch_assoc();
+        // $pass = $row['pass'];
+        
     if($password == "123"){
         // Сохранение данных в сессию
         $_SESSION['login'] = $login;
