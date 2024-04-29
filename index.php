@@ -14,22 +14,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     mysqli_set_charset($db, 'utf8');
 
     //Запрос к базе данных
-    $result = $db->query("SELECT pass FROM users WHERE login = '$login'");
+    $result = $db->query("SELECT id,pass FROM users WHERE login = '$login'");
     $row = $result->fetch_assoc();
     $pass = $row['pass'];
-    echo "Pass: ".$pass;
-    // if ($result->num_rows > 0) {
-    //     // далее идет проверка пароля и т.д.
-    // } else {
-    //     echo "Пользователь с таким логином не найден";
-    // }
+    $id = $row['id'];
     
     if($password == $pass){
         // Сохранение данных в сессию
         $_SESSION['login'] = $login;
     
         // Использование данных из сессии
-        echo "Hello, " . $_SESSION['login'];
+        header("Location:change.php?password=".$password."&id=".$id);
+        session_abort();
     }else{
         echo "Неправильный пароль";
     }
