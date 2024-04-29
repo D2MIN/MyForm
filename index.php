@@ -1,21 +1,25 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-$login = $_POST["login"];
+    $login = $_POST["login"];
+    $password = $_POST["password"];
 
-session_start();
-// Подключение к базе данных
-// $db = new mysqli('localhost', 'd2min', 'Qwerty40982', 'Form');
+    session_start();
+    // Подключение к базе данных
+    $db = new mysqli('localhost', 'd2min', 'Qwerty40982', 'Form');
 
-// Запрос к базе данных
-// $result = $db->query("SELECT pass FROM user WHERE login = $login");
+    // Запрос к базе данных
+    $result = $db->query("SELECT pass FROM user WHERE login = $login");
 
-// Сохранение данных в сессию
-$_SESSION['login'] = $login;
-
-// Использование данных из сессии
-echo "Hello, " . $_SESSION['login'];
-
+    if($password == $result){
+        // Сохранение данных в сессию
+        $_SESSION['login'] = $login;
+    
+        // Использование данных из сессии
+        echo "Hello, " . $_SESSION['login'];
+    }else{
+        echo "Неправильный пароль";
+    }
 
 }
 ?>
