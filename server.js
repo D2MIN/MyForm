@@ -26,7 +26,7 @@ const server = http.createServer((req, res) => {
       // Почему то NULL
       const login = bodyObject.login;
       const pass = bodyObject.pass;
-      console.log(loign, pass);
+      console.log(login, pass);
       const lengs = makeLengsArr(bodyObject);
       
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
