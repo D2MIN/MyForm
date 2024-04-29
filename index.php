@@ -6,9 +6,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     
     // Подключение к базе данных
-    $db = new mysqli('localhost', 'd2min', 'Qwerty40982', 'Form');
-    if ($db->connect_error) {
-        die("Connection failed: " . $db->connect_error);
+    $db = mysqli_connect('localhost', 'my_user', 'my_password', 'my_db');
+    if (!$db) {
+        die('Error connecting to database: ' . mysqli_connect_error());
     }
     // Запрос к базе данных
     // $result = $db->query("SELECT pass FROM users WHERE login = '$login'");
