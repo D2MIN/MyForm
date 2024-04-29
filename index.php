@@ -14,8 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Запрос к базе данных
     $result = $db->query("SELECT pass FROM users WHERE login = '$login'");
-    $row = $result->fetch_assoc();
-    $pass = $row['pass'];
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $pass = $row['pass'];
+        // далее идет проверка пароля и т.д.
+    } else {
+        echo "Пользователь с таким логином не найден";
+    }
     
     session_start();
     if($password == "123"){
