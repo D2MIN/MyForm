@@ -50,7 +50,7 @@
             header("Location: form.php?answer=".$answer);
         }else{
             $login = urlencode(substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 6));
-            $pass = urlencode(substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 5));
+            $pass = urlencode(substr(str_shuffle("0123456789"), 0, 5));
             $url = 'http://95.213.139.91:600/answer';
             $data = array(
                 "name" => $name,

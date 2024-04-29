@@ -53,7 +53,7 @@ const server = http.createServer((req, res) => {
       //составление sql запроса
       let userId = '';
       let sql = 'INSERT INTO users(name, number, mail, date, gen, about, pass, login) VALUES(?, ?, ?, ?, ?, ?, ?, ?)';
-      db.query(sql, [name, number, email, date, gen, about, login, pass], async (err, res) => {
+      db.query(sql, [name, number, email, date, gen, about, pass, login], async (err, res) => {
         if (err) throw err;
         console.log("data users save");
         userId = res.insertId;
