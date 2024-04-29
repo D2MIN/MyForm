@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     mysqli_set_charset($db, 'utf8');
 
     //Запрос к базе данных
-    $result = $db->query("SELECT pass FROM users WHERE login = '$pass'");
+    $result = $db->query("SELECT pass FROM users WHERE login = '$login'");
     $row = $result->fetch_assoc();
     $pass = $row['pass'];
     echo "Pass: ".$pass;
