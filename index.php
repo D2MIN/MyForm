@@ -12,18 +12,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     mysqli_set_charset($db, 'utf8');
 
-    // Запрос к базе данных
+    Запрос к базе данных
     $result = $db->query("SELECT pass FROM users WHERE login = '$login'");
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $pass = $row['pass'];
-        // далее идет проверка пароля и т.д.
-    } else {
-        echo "Пользователь с таким логином не найден";
-    }
+    // if ($result->num_rows > 0) {
+    //     $row = $result->fetch_assoc();
+    //     $pass = $row['pass'];
+    //     // далее идет проверка пароля и т.д.
+    // } else {
+    //     echo "Пользователь с таким логином не найден";
+    // }
     
     session_start();
-    if($password == "123"){
+    if($password == $pass){
         // Сохранение данных в сессию
         $_SESSION['login'] = $login;
     
