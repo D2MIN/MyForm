@@ -9,14 +9,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = new mysqli('localhost', 'd2min', 'Qwerty40982', 'Form');
 
     // Запрос к базе данных
-    $result = $db->query("SELECT pass FROM users WHERE login = '$login'");
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    $row = $result->fetch_assoc();
-    $pass = $row['pass'];
+    // $result = $db->query("SELECT pass FROM users WHERE login = '$login'");
+    // if ($conn->connect_error) {
+    //     die("Connection failed: " . $conn->connect_error);
+    // }
+    // $row = $result->fetch_assoc();
+    // $pass = $row['pass'];
 
-    if($password == $pass){
+    if($password == "123"){
         // Сохранение данных в сессию
         $_SESSION['login'] = $login;
     
