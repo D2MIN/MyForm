@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result = $db->query("SELECT pass FROM users WHERE login = '$pass'");
     $row = $result->fetch_assoc();
     $pass = $row['pass'];
-    echo $pass;
+    echo "Pass: ".$pass;
     // if ($result->num_rows > 0) {
     //     // далее идет проверка пароля и т.д.
     // } else {
