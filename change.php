@@ -62,7 +62,7 @@
             $gen = mysqli_real_escape_string($db, $gen);
             $about = mysqli_real_escape_string($db, $about);
             $id = mysqli_real_escape_string($db, $id);
-            $db->query("UPDATE users SET name='Roman' WHERE id = 5");
+            $db->query("UPDATE users SET name='$name', number='$number', email='$email', date='$date', gen='$gen', about='$about' WHERE id = '$id'");
             //, number='$number', email='$email', date='$date', gen='$gen', about='$about'
 
             $answer = "Форма успешно изменена !";
