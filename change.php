@@ -62,7 +62,6 @@
             $gen = mysqli_real_escape_string($db, $gen);
             $about = mysqli_real_escape_string($db, $about);
             $id = mysqli_real_escape_string($db, $id);
-            echo "id=".$id."name=".$name;
             $db->query("UPDATE users SET name='Roman' WHERE id = 5");
             //, number='$number', email='$email', date='$date', gen='$gen', about='$about'
 
@@ -82,7 +81,7 @@
 </head>
 <body>
     <h1><?php echo $answer ?></h1>
-    <form id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+    <form id="form" action="<?php echo "change.php?answer=".$answer."&pasword=".$password."&id=".$id ?>" method="POST">
         <div class="body">
             <div class="info">
                 <div class="input">
