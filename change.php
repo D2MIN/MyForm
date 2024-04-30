@@ -52,8 +52,9 @@
             if(!$db){
                 die('Error connecting to database: ' . mysqli_connect_error());
             }
+            mysqli_set_charset($db, 'utf8');
 
-            $result = $db->query("UPDATE users SET name='$name', number='$number', email='$email', date='$date', gen='$gen', about='$about' WHERE id = '$id'");
+            $db->query("UPDATE users SET name='$name', number='$number', email='$email', date='$date', gen='$gen', about='$about' WHERE id = '$id'");
 
             $answer == "Форма успешно изменена !";
             header("Location: change.php?answer=".$answer);
