@@ -1,8 +1,8 @@
 <?php
     $password = $_GET['password'];
     $id = $_GET['id'];
-
     $answer = $_GET['answer'];
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST["name"];
         $email = $_POST["email"];
@@ -48,7 +48,6 @@
         if($flag == 1){
             header("Location: change.php?answer=".$answer);
         }else{
-
             $db = mysqli_connect("localhost","d2min","Qwerty40982","Form");
             if(!$db){
                 die('Error connecting to database: ' . mysqli_connect_error());
@@ -71,7 +70,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+    <h1><?php echo $answer ?></h1>
     <form id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
         <div class="body">
             <div class="info">
