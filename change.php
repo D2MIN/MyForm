@@ -46,7 +46,8 @@
         }
 
         if($flag == 1){
-            header("Location: change.php?answer=".$answer);
+            $answer = "Ошибка";
+            header("Location: change.php?answer=".$answer."&pasword=".$password."&id=".$id);
         }else{
             $db = mysqli_connect("localhost","d2min","Qwerty40982","Form");
             if(!$db){
