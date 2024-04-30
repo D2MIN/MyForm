@@ -53,7 +53,7 @@
             if(!$db){
                 die('Error connecting to database: ' . mysqli_connect_error());
             }
-            // mysqli_set_charset($db, 'utf8');
+            mysqli_set_charset($db, 'utf8');
 
             // $name = mysqli_real_escape_string($db, $name);
             // $number = mysqli_real_escape_string($db, $number);
