@@ -56,8 +56,8 @@
 
             $db->query("UPDATE users SET name='$name', number='$number', email='$email', date='$date', gen='$gen', about='$about' WHERE id = '$id'");
 
-            $answer == "Форма успешно изменена !";
-            header("Location: change.php?answer=".$answer);
+            $answer = "Форма успешно изменена !";
+            header("Location: change.php?answer=".$answer."&pasword=".$password."&id=".$id);
         }
     }
 ?>
