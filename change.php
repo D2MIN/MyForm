@@ -53,16 +53,16 @@
             if(!$db){
                 die('Error connecting to database: ' . mysqli_connect_error());
             }
-            mysqli_set_charset($db, 'utf8');
+            // mysqli_set_charset($db, 'utf8');
 
-            $name = mysqli_real_escape_string($db, $name);
-            $number = mysqli_real_escape_string($db, $number);
-            $email = mysqli_real_escape_string($db, $email);
-            $date = mysqli_real_escape_string($db, $date);
-            $gen = mysqli_real_escape_string($db, $gen);
-            $about = mysqli_real_escape_string($db, $about);
-            $id = mysqli_real_escape_string($db, $id);
-            $db->query("UPDATE users SET name='$name', number='$number', email='$email', date='$date', gen='$gen', about='$about' WHERE id = '$id'");
+            // $name = mysqli_real_escape_string($db, $name);
+            // $number = mysqli_real_escape_string($db, $number);
+            // $email = mysqli_real_escape_string($db, $email);
+            // $date = mysqli_real_escape_string($db, $date);
+            // $gen = mysqli_real_escape_string($db, $gen);
+            // $about = mysqli_real_escape_string($db, $about);
+            // $id = mysqli_real_escape_string($db, $id);
+            // $db->query("UPDATE users SET name='$name', number='$number', email='$email', date='$date', gen='$gen', about='$about' WHERE id = '$id'");
 
             $answer = "Форма успешно изменена !";
             header("Location: change.php?answer=".$answer."&pasword=".$password."&id=".$id);
