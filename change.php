@@ -62,6 +62,7 @@
             $gen = mysqli_real_escape_string($db, $gen);
             $about = mysqli_real_escape_string($db, $about);
             $id = mysqli_real_escape_string($db, $id);
+            echo "id=".$id."name=".$name;
             $db->query("UPDATE users SET name='Roman' WHERE id = 5");
             //, number='$number', email='$email', date='$date', gen='$gen', about='$about'
 
