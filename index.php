@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST["password"];
     if(!empty($_POST['exit'])){
         session_destroy();
-        header("Location:change.php?"."&id=".$_SESSION['id']);
+        header("Location:index.php");
     }
     if(!empty($_SESSION['user_id'])){
         header("Location:change.php?"."&id=".$_SESSION['id']);
