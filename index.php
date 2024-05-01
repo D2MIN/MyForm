@@ -1,12 +1,15 @@
 <?php
 $answer = $_GET["answer"];
 
-if(isset($_GET['exit']) && $_GET['exit'] == "exit"){
+if($_GET['exit'] == "exit"){
     session_destroy();
-    header("Location:index.php");
-}else{
-    header("Location:change.php?"."&id=".$_SESSION['id']);
+    header("Location: index.php");
+} elseif(isset($_SESSION['id'])) {
+    header("Location: change.php?id=" . $_SESSION['id']);
+} else {
+    header("Location: index.php");
 }
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $login = $_POST["login"];
     $password = $_POST["password"];
