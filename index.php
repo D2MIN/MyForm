@@ -1,13 +1,13 @@
 <?php
 $answer = $_GET["answer"];
 
+if($_GET['exit'] == "exit"){
+    session_destroy();
+    header("Location:index.php");
+}
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $login = $_POST["login"];
     $password = $_POST["password"];
-    if(!empty($_POST['exit'])){
-        session_destroy();
-        header("Location:index.php");
-    }
     if(!empty($_SESSION['user_id'])){
         header("Location:change.php?"."&id=".$_SESSION['id']);
     }
