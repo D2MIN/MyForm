@@ -4,7 +4,7 @@
 
     // Старт сессии
     session_start();
-    if(!empty($_GET[id])){
+    if(!empty($_GET["id"])){
         // Сохранение данных в сессию
         $_SESSION['user_id'] = $id;
         header("Location: change.php?");
