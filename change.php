@@ -7,7 +7,7 @@
     if(!empty($_GET["id"])){
         // Сохранение данных в сессию
         $_SESSION['user_id'] = $id;
-        // header("Location: change.php?");
+        header("Location: change.php?");
     }
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST["name"];
