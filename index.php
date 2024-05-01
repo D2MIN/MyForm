@@ -19,8 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $row['id'];
     $name = $row['name'];
     $number = $row['number'];
-    $mail = $row['mail'];
+    $email = $row['mail'];
     $date = $row['date'];
+    $about = $row['about'];
     $pass = $row['pass'];
     
     if($password == $pass){
@@ -28,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         setcookie("numberC", $number, time()+5000,"/");
         setcookie("emailC", $email, time()+5000,"/");
         setcookie("dateC", $date, time()+5000,"/");
+        setcookie("aboutC", $about, time()+5000,"/");
         // Использование данных из сессии
         header("Location:change.php?"."&id=".$id);
     }else{

@@ -123,7 +123,7 @@
                     </div>
                     <div class="textarea">
                         <h4>Напишите о себе</h4>
-                        <textarea name="about" cols="30" rows="8" required></textarea>
+                        <textarea value="<?php echo $_COOKIE['about'];?>" name="about" cols="30" rows="8" required></textarea>
                     </div>
                     <label>
                         <input class="custom-checkbox" type="checkbox" name="document" id="" required>Я согласен(а) c условиями <pre> </pre> <a href="#"> коденфиденциальности</a>
