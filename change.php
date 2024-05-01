@@ -2,11 +2,6 @@
     $id = $_GET['id'];
     $answer = $_GET['answer'];
 
-    setcookie("name", '', time()-5000,"/");
-    setcookie("number", '', time()-5000,"/");
-    setcookie("email", '', time()-5000,"/");
-    setcookie("date", '', time()-5000,"/");
-
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST["name"];
         $email = $_POST["email"];
@@ -90,15 +85,15 @@
             <div class="info">
                 <div class="input">
                     <!-- Имя -->
-                    <input class="<?php echo $_COOKIE['nameErr'] ?>" name="name" id="name" type="text" value="<?php echo $_COOKIE["name"]; ?>" placeholder="Введите имя" required>
+                    <input class="<?php echo $_COOKIE['nameErr'] ?>" name="name" id="name" type="text" value="<?php echo $_COOKIE["nameC"]; ?>" placeholder="Введите имя" required>
                         <span class="span <?php echo $_COOKIE['nameErr'] ?>"> <?php if(isset($_COOKIE['nameErr'])) echo "Неверные символы" ?> </span>
                     <!-- Номер -->
-                    <input class="<?php echo $_COOKIE['numberErr'] ?>" name="number" id="number" type="number" value="<?php echo $_COOKIE["number"]; ?>" placeholder="Введите телефон" required>
+                    <input class="<?php echo $_COOKIE['numberErr'] ?>" name="number" id="number" type="number" value="<?php echo $_COOKIE["numberC"]; ?>" placeholder="Введите телефон" required>
                         <span class="span <?php echo $_COOKIE['numberErr'] ?>"> <?php if(isset($_COOKIE['numberErr'])) echo "Неправильное количество цифр" ?> </span>
                     <!-- Почта -->
-                    <input name="email" id="email" type="email" value="<?php echo $_COOKIE["email"]; ?>" placeholder="Введите почту" required>
+                    <input name="email" id="email" type="email" value="<?php echo $_COOKIE["emailC"]; ?>" placeholder="Введите почту" required>
                     <!-- Дата -->
-                    <input class="<?php echo $_COOKIE['dateErr']?>" name="date" id="date" type="date" value="<?php echo $_COOKIE['date']?>" placeholder="" required>
+                    <input class="<?php echo $_COOKIE['dateErr']?>" name="date" id="date" type="date" value="<?php echo $_COOKIE['dateC']?>" placeholder="" required>
                         <span class="span <?php echo $_COOKIE['dateErr'] ?>"> <?php if(isset($_COOKIE['dateErr'])) echo "Некорректная дата" ?> </span>
                 </div>
                 <div class="cheked">
