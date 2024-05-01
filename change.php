@@ -1,5 +1,4 @@
 <?php
-    $password = $_GET['password'];
     $id = $_GET['id'];
     $answer = $_GET['answer'];
 
@@ -47,7 +46,7 @@
 
         if($flag == 1){
             $answer = "Ошибка";
-            header("Location: change.php?answer=".$answer."&pasword=".$password."&id=".$id);
+            header("Location: change.php?answer=".$answer."&id=".$id);
         }else{
             $db = mysqli_connect("localhost","d2min","Qwerty40982","Form");
             if(!$db){
@@ -66,7 +65,7 @@
             //, number='$number', email='$email', date='$date', gen='$gen', about='$about'
 
             $answer = "Форма успешно изменена !";
-            header("Location: change.php?answer=".$answer."&pasword=".$password."&id=".$id);
+            header("Location: change.php?answer=".$answer."&id=".$id);
         }
     }
 ?>
