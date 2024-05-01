@@ -4,6 +4,8 @@ $answer = $_GET["answer"];
 if($_GET['exit'] == "exit"){
     session_destroy();
     header("Location:index.php");
+}else{
+    header("Location:change.php?"."&id=".$_SESSION['id']);
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $login = $_POST["login"];
