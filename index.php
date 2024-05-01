@@ -14,12 +14,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     mysqli_set_charset($db, 'utf8');
     
     //Запрос к базе данных
-    $result = $db->query("SELECT id,pass FROM users WHERE login = '$login'");
+    $result = $db->query("SELECT * FROM users WHERE login = '$login'");
     $row = $result->fetch_assoc();
-    $pass = $row['pass'];
     $id = $row['id'];
+    $name = $row['name'];
+    $number = $row['number'];
+    $mail = $row['mail'];
+    $date = $row['date'];
+    $pass = $row['pass'];
     
     if($password == $pass){
+        setcookie("nameC", $name, time()+5000,"/");
+        setcookie("numberC", $number, time()+5000,"/");
+        setcookie("emailC", $email, time()+5000,"/");
+        setcookie("dateC", $date, time()+5000,"/");
         // Использование данных из сессии
         header("Location:change.php?"."&id=".$id);
     }else{
