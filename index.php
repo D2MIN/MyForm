@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="content">
         <div class="loginForm">
             <h1>Войдите что бы менять таблицу</h1>
-            <p>Ответ: <?php echo $answer; ?></p>
+            <p class="error"><?php echo $answer; ?></p>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" >
                 <input name="login" type="text" placeholder="Login">
                 <input name="password" type="password" placeholder="Password">
