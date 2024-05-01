@@ -4,6 +4,12 @@ $answer = $_GET["answer"];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $login = $_POST["login"];
     $password = $_POST["password"];
+    if(!empty($_POST['exit'])){
+        session_destroy();
+    }
+    if(!empty($_SESSION['user_id'])){
+        header("Location:change.php?"."&id=".$_SESSION['id']);
+    }
     
     
     // Подключение к базе данных

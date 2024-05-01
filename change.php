@@ -2,6 +2,13 @@
     $id = $_GET['id'];
     $answer = $_GET['answer'];
 
+    // Старт сессии
+    session_start();
+    if(!empty($_GET[id])){
+        // Сохранение данных в сессию
+        $_SESSION['user_id'] = $id;
+        header("Location: change.php?");
+    }
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST["name"];
         $email = $_POST["email"];
@@ -46,7 +53,7 @@
 
         if($flag == 1){
             $answer = "Ошибка";
-            header("Location: change.php?answer=".$answer."&id=".$id);
+            header("Location: change.php?answer=".$answer."&id=".$_SESSION["user_id"]);
         }else{
             $db = mysqli_connect("localhost","d2min","Qwerty40982","Form");
             if(!$db){
@@ -61,11 +68,11 @@
             $gen = mysqli_real_escape_string($db, $gen);
             $about = mysqli_real_escape_string($db, $about);
             $id = mysqli_real_escape_string($db, $id);
-            $db->query("UPDATE users SET name='$name', number='$number', mail='$email',date='$date', gen='$gen', about='$about' WHERE id = '$id'");
+            $db->query("UPDATE users SET name='$name', number='$number', mail='$email',date='$date', gen='$gen', about='$about' WHERE id = '$_SESSION["user_id"]'");
             //, number='$number', email='$email', date='$date', gen='$gen', about='$about'
 
             $answer = "Форма успешно изменена !";
-            header("Location: change.php?answer=".$answer."&id=".$id);
+            header("Location: change.php?answer=".$answer."&id=".$_SESSION["user_id"]);
         }
     }
 ?>
@@ -123,7 +130,7 @@
                     </div>
                     <div class="textarea">
                         <h4>Напишите о себе</h4>
-                        <textarea value="<?php echo $_COOKIE['about'];?>" name="about" cols="30" rows="8" required></textarea>
+                        <textarea value="<?php echo $_COOKIE['aboutC'];?>" name="about" cols="30" rows="8" required></textarea>
                     </div>
                     <label>
                         <input class="custom-checkbox" type="checkbox" name="document" id="" required>Я согласен(а) c условиями <pre> </pre> <a href="#"> коденфиденциальности</a>
@@ -133,6 +140,8 @@
             <button class="button" type="submit">Отправить</button>
         </div>
     </form>
-    <a href="index.php"><button>Выход</button></a>
+    <form action="index.php" method="POST">
+        <button name="exit">Выход</button>
+    </form>
 </body>
 </html>
