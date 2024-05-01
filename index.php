@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location:change.php?"."&id=".$id);
     }else{
         $answer = "Неправильный пароль";
-        header("Location:index.php?"."&answer=".$answer);
+        header("Location:index.php?answer=".$answer);
     }
 }
 ?>
