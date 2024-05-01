@@ -140,7 +140,7 @@
             <button class="button" type="submit">Отправить</button>
         </div>
     </form>
-    <form action="index.php" method="POST">
+    <form id="form" action="index.php" method="POST">
         <button name="exit">Выход</button>
     </form>
 </body>
