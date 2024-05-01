@@ -2,6 +2,11 @@
     $id = $_GET['id'];
     $answer = $_GET['answer'];
 
+    setcookie("name", '', time()-5000,"/");
+    setcookie("number", '', time()-5000,"/");
+    setcookie("email", '', time()-5000,"/");
+    setcookie("date", '', time()-5000,"/");
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST["name"];
         $email = $_POST["email"];
