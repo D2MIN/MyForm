@@ -13,7 +13,7 @@
         $number = $_POST["number"];
         $date = $_POST["date"];
         $gen = $_POST["gen"];
-        $lengs = $_POST["leng[]"];
+        $lengs = $_POST["leng"];
         $about = $_POST["about"];
 
         $flag = 0;
