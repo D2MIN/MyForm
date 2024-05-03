@@ -2,7 +2,7 @@
     $answer = $_GET['answer'];
 
     session_start();
-    if(!isset($_SESSION["id"])){
+    if(empty($_SESSION["id"])){
         header("Location: index.php?");
     }
     
