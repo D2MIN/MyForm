@@ -4,7 +4,6 @@ $answer = $_GET["answer"];
 if($_GET['exit'] == "exit"){
     unset($_SESSION['id']);
     session_destroy();
-    header("Location: index.php?");
 } elseif(isset($_SESSION['id'])) {
     header("Location: change.php");
 }
