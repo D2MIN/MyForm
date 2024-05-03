@@ -1,14 +1,12 @@
 <?php
-    $id = $_GET['id'];
     $answer = $_GET['answer'];
-
     // Старт сессии
     session_start();
     if(!empty($_GET["id"])){
         echo $_GET["id"];
         // Сохранение данных в сессию
         $_SESSION['user_id'] = $id;
-        header("Location: change.php?");
+        // header("Location: change.php?");
     }else{
         header("Location: index.php?");
     }
