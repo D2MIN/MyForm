@@ -1,8 +1,13 @@
 <?php
     $answer = $_GET['answer'];
 
+    if($_GET['exit'] = 'exit'){
+        unset($_SESSION['id']);
+        session_destroy();
+        header("Location: index.php?");
+    }
+
     session_start();
-    echo $_SESSION['id']."has been geted";
     if(empty($_SESSION["id"])){
         header("Location: index.php?");
     }
@@ -138,8 +143,8 @@
             <button class="button" type="submit">Отправить</button>
         </div>
     </form>
-    <form id="form" action="change.php?exit=root" method="GET">
-        <button name="exit">Выход</button>
+    <form id="form" action="change.php?exit=exit" method="GET">
+        <button name="exit" type="submit">Выход</button>
     </form>
 </body>
 </html>
