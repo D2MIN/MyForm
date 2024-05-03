@@ -69,9 +69,9 @@
             
             $db->query("UPDATE users SET name='$name', number='$number', mail='$email',date='$date', gen='$gen', about='$about' WHERE id = '$id'");
             $db->query("DELETE FROM user_lengs where user_id = '$id'");
-            // foreach ($lengs as $leng) {
-            //     $db->query("INSERT INTO user_lengs(user_id, leng_id) SELECT $_SESSION['id'], lengs.id FROM lengs WHERE lengs.leng = '$leng'");
-            // }
+            foreach ($lengs as $leng) {
+                $db->query("INSERT INTO user_lengs(user_id, leng_id) SELECT $_SESSION['id'], lengs.id FROM lengs WHERE lengs.leng = '$leng'");
+            }
 
             $answer = "Форма успешно изменена !";
             header("Location: change.php?answer=".$answer);
