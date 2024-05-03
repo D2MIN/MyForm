@@ -138,7 +138,7 @@
             <button class="button" type="submit">Отправить</button>
         </div>
     </form>
-    <form id="form" action="change.php?exit=exit" method="GET">
+    <form id="form" action="change.php?exit=root" method="GET">
         <button name="exit">Выход</button>
     </form>
 </body>
