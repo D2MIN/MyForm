@@ -3,8 +3,8 @@
     $answer = $_GET['answer'];
 
     // Старт сессии
+    session_start();
     if(!empty($_GET["id"])){
-        session_start();
         echo $_GET["id"];
         // Сохранение данных в сессию
         $_SESSION['user_id'] = $id;
