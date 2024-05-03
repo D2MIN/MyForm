@@ -3,12 +3,11 @@ $answer = $_GET["answer"];
 
 // Оибка в условиях где-то
 if($_GET['exit'] == "exit"){
-    echo $_GET['exit']." has been geted";
     unset($_SESSION['id']);
     session_destroy();
     header("Location: index.php");
 } elseif(isset($_SESSION['id'])) {
-    header("Location: change.php?");
+    header("Location: change.php?answer=exit");
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
