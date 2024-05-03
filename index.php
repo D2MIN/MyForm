@@ -5,9 +5,9 @@ $answer = $_GET["answer"];
 if($_GET['exit'] == "exit"){
     unset($_SESSION['id']);
     session_destroy();
-    header("Location: index.php");
+    header("Location: index.php?answer=exit");
 } elseif(isset($_SESSION['id'])) {
-    header("Location: change.php?answer=exit");
+    header("Location: change.php");
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
