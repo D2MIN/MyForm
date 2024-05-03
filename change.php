@@ -1,10 +1,10 @@
 <?php
     $answer = $_GET['answer'];
 
-    if($_GET['exit'] = 'exit'){
+    if($_GET['exit'] == 'exit'){
         unset($_SESSION['id']);
         session_destroy();
-        header("Location: pop.php?");
+        header("Location: index.php?");
     }
 
     session_start();
