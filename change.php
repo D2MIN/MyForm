@@ -1,11 +1,11 @@
 <?php
     $answer = $_GET['answer'];
 
-    // if($_GET['exit'] = 'exit'){
-    //     unset($_SESSION['id']);
-    //     session_destroy();
-    //     header("Location: index.php?");
-    // }
+    if($_GET['exit'] = 'exit'){
+        unset($_SESSION['id']);
+        session_destroy();
+        header("Location: index.php?");
+    }
 
     session_start();
     if(empty($_SESSION["id"])){
