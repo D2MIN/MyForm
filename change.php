@@ -13,7 +13,7 @@
         $number = $_POST["number"];
         $date = $_POST["date"];
         $gen = $_POST["gen"];
-        $lengs = $_POST["leng"];
+        $lengs = $_POST["leng[]"];
         $about = $_POST["about"];
 
         $flag = 0;
@@ -66,8 +66,12 @@
             $gen = mysqli_real_escape_string($db, $gen);
             $about = mysqli_real_escape_string($db, $about);
             $id = mysqli_real_escape_string($db, $_SESSION["id"]);
+            
             $db->query("UPDATE users SET name='$name', number='$number', mail='$email',date='$date', gen='$gen', about='$about' WHERE id = '$id'");
-            //, number='$number', email='$email', date='$date', gen='$gen', about='$about'
+            $db->query("DELETE FROM user_lengs where user_id = '$id'");
+            foreach ($lengs as $leng) {
+                $db->query("INSERT INTO user_lengs(user_id, leng_id) SELECT $_SESSION['id'], lengs.id FROM lengs WHERE lengs.leng = '$leng'");
+            }
 
             $answer = "Форма успешно изменена !";
             header("Location: change.php?answer=".$answer);
