@@ -7,7 +7,7 @@ if($_GET['exit'] == "exit"){
     session_destroy();
     header("Location: index.php");
 } elseif(isset($_SESSION['id'])) {
-    header("Location: change.php?id=" . $_SESSION['id']);
+    header("Location: change.php?");
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
