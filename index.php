@@ -1,7 +1,7 @@
 <?php
 $answer = $_GET["answer"];
 
-if($_GET['exit'] == ""){
+if($_GET['exit'] == "exit"){
     unset($_SESSION['id']);
     session_destroy();
     header("Location: index.php?");
