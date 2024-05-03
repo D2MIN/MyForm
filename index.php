@@ -42,7 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         setcookie("dateC", $date, time()+5000,"/");
         setcookie("aboutC", $about, time()+5000,"/");
         // Использование данных из сессии
-        header("Location:change.php?id=".$id);
+        session_start();
+        $_SESSION['id'] = $id;
+        header("Location:change.php?");
     }else{
         $answer = "Неправильный пароль";
         header("Location:index.php?answer=".$answer);

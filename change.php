@@ -1,15 +1,10 @@
 <?php
     $answer = $_GET['answer'];
-    // Старт сессии
-    session_start();
-    if(!empty($_GET["id"])){
-        echo $_GET["id"];
-        // Сохранение данных в сессию
-        $_SESSION['user_id'] = $id;
-        // header("Location: change.php?");
-    }else{
+
+    if(empty($_SESSION["id"])){
         header("Location: index.php?");
     }
+    
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST["name"];
         $email = $_POST["email"];
@@ -54,7 +49,7 @@
 
         if($flag == 1){
             $answer = "Ошибка";
-            header("Location: change.php?answer=".$answer."&id=".$_SESSION["user_id"]);
+            header("Location: change.php?answer=".$answer);
         }else{
             $db = mysqli_connect("localhost","d2min","Qwerty40982","Form");
             if(!$db){
@@ -68,12 +63,12 @@
             $date = mysqli_real_escape_string($db, $date);
             $gen = mysqli_real_escape_string($db, $gen);
             $about = mysqli_real_escape_string($db, $about);
-            $id = mysqli_real_escape_string($db, $_SESSION["user_id"]);
+            $id = mysqli_real_escape_string($db, $_SESSION["id"]);
             $db->query("UPDATE users SET name='$name', number='$number', mail='$email',date='$date', gen='$gen', about='$about' WHERE id = '$id'");
             //, number='$number', email='$email', date='$date', gen='$gen', about='$about'
 
             $answer = "Форма успешно изменена !";
-            header("Location: change.php?answer=".$answer."&id=".$id);
+            header("Location: change.php?answer=".$answer);
         }
     }
 ?>
