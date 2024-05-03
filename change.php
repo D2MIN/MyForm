@@ -4,7 +4,7 @@
     if($_GET['exit'] = 'exit'){
         unset($_SESSION['id']);
         session_destroy();
-        header("Location: index.php?");
+        header("Location: pop.php?");
     }
 
     session_start();
