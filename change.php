@@ -8,6 +8,8 @@
         // Сохранение данных в сессию
         $_SESSION['user_id'] = $id;
         header("Location: change.php?");
+    }else{
+        header("Location: index.php?");
     }
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST["name"];

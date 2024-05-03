@@ -8,9 +8,6 @@ if($_GET['exit'] == "exit"){
 } elseif(isset($_SESSION['id'])) {
     header("Location: change.php?id=" . $_SESSION['id']);
 }
-// else {
-//     header("Location: index.php");
-// }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $login = $_POST["login"];
