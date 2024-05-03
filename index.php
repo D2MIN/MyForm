@@ -2,7 +2,7 @@
 $answer = $_GET["answer"];
 
 // Оибка в условиях где-то
-if($_GET['exit'] == "exit"){
+if($_GET['exit'] == ""){
     unset($_SESSION['id']);
     session_destroy();
     header("Location: index.php?");
