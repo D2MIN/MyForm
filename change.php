@@ -4,6 +4,7 @@
     session_start();
     if(!isset($_SESSION["id"])){
         header("Location: index.php?");
+        exit();
     }
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -137,8 +138,6 @@
             <button class="button" type="submit">Отправить</button>
         </div>
     </form>
-    <form id="form" action="index.php?exit=exit&" method="GET">
-        <button name="exit" type="submit">Выход</button>
-    </form>
+        <a href="logout.php"><button name="exit" type="submit">Выход</button><a/>
 </body>
 </html>

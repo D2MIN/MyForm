@@ -1,11 +1,10 @@
 <?php
 $answer = $_GET["answer"];
 
-if($_GET['exit'] == "exit"){
-    unset($_SESSION['id']);
-    session_destroy();
-} elseif(isset($_SESSION['id'])) {
-    header("Location: change.php");
+session_start();
+if(isset($_SESSION['user_id'])) {
+    header("Location: account.php"); // перенаправление на страницу личного кабинета
+    exit();
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -41,7 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         setcookie("dateC", $date, time()+5000,"/");
         setcookie("aboutC", $about, time()+5000,"/");
         // Использование данных из сессии
-        session_start();
         $_SESSION['id'] = $id;
         header("Location:change.php?");
     }else{
