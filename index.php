@@ -3,7 +3,7 @@ $answer = $_GET["answer"];
 
 session_start();
 if(isset($_SESSION['id'])) {
-    header("Location: account.php"); // перенаправление на страницу личного кабинета
+    header("Location: change.php"); // перенаправление на страницу личного кабинета
     exit();
 }
 
