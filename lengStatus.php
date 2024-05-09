@@ -26,8 +26,6 @@
         "Prolog" => $countLeng[9],
         "Scarse" => $countLeng[10],
     );
-
-    // header("Location: lengStatus.php$")
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +33,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lengStatus.css">
     <title>LengStatus</title>
 </head>
 <body>
@@ -42,17 +41,17 @@
         <div class="inputStatus">
             <h1>Статистика:</h1>
             <div class="lengs">
-                <h4>Pascal : <?php echo $lengs['Pascal']?></h4>
-                <h4>C : <?php echo $lengs['C']?></h4>
-                <h4>C++ : <?php echo $lengs['C++']?></h4>
-                <h4>JavaScript : <?php echo $lengs['JavaScript']?></h4>
-                <h4>Php : <?php echo $lengs['Php']?></h4>
-                <h4>Python : <?php echo $lengs['Python']?></h4>
-                <h4>Java : <?php echo $lengs['Java']?></h4>
-                <h4>Haskel : <?php echo $lengs['Haskel']?></h4>
-                <h4>Clojure : <?php echo $lengs['Clojure']?></h4>
-                <h4>Prolog : <?php echo $lengs['Prolog']?></h4>
-                <h4>Scarse : <?php echo $lengs['Scarse']?></h4>
+                <h3>Pascal : <?php echo $lengs['Pascal']?></h3>
+                <h3>C : <?php echo $lengs['C']?></h3>
+                <h3>C++ : <?php echo $lengs['C++']?></h3>
+                <h3>JavaScript : <?php echo $lengs['JavaScript']?></h3>
+                <h3>Php : <?php echo $lengs['Php']?></h3>
+                <h3>Python : <?php echo $lengs['Python']?></h3>
+                <h3>Java : <?php echo $lengs['Java']?></h3>
+                <h3>Haskel : <?php echo $lengs['Haskel']?></h3>
+                <h3>Clojure : <?php echo $lengs['Clojure']?></h3>
+                <h3>Prolog : <?php echo $lengs['Prolog']?></h3>
+                <h3>Scarse : <?php echo $lengs['Scarse']?></h3>
             </div>
         </div>
     </div>
