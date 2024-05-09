@@ -41,17 +41,17 @@
         <div class="inputStatus">
             <h1>Статистика:</h1>
             <div class="lengs">
-                <h3>Pascal : <?php echo $lengs['Pascal']?></h3>
-                <h3>C : <?php echo $lengs['C']?></h3>
-                <h3>C++ : <?php echo $lengs['C++']?></h3>
-                <h3>JavaScript : <?php echo $lengs['JavaScript']?></h3>
-                <h3>Php : <?php echo $lengs['Php']?></h3>
-                <h3>Python : <?php echo $lengs['Python']?></h3>
-                <h3>Java : <?php echo $lengs['Java']?></h3>
-                <h3>Haskel : <?php echo $lengs['Haskel']?></h3>
-                <h3>Clojure : <?php echo $lengs['Clojure']?></h3>
-                <h3>Prolog : <?php echo $lengs['Prolog']?></h3>
-                <h3>Scarse : <?php echo $lengs['Scarse']?></h3>
+                <h2>Pascal : <?php echo $lengs['Pascal']?></h2>
+                <h2>C : <?php echo $lengs['C']?></h2>
+                <h2>C++ : <?php echo $lengs['C++']?></h2>
+                <h2>JavaScript : <?php echo $lengs['JavaScript']?></h2>
+                <h2>Php : <?php echo $lengs['Php']?></h2>
+                <h2>Python : <?php echo $lengs['Python']?></h2>
+                <h2>Java : <?php echo $lengs['Java']?></h2>
+                <h2>Haskel : <?php echo $lengs['Haskel']?></h2>
+                <h2>Clojure : <?php echo $lengs['Clojure']?></h2>
+                <h2>Prolog : <?php echo $lengs['Prolog']?></h2>
+                <h2>Scarse : <?php echo $lengs['Scarse']?></h2>
             </div>
             <a href="index.php"><button>Назад</button></a>
         </div>

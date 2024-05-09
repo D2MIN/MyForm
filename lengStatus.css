@@ -16,6 +16,13 @@ body {
     width: 100vw;
 }
 
+.inputStatus{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 button{
     background-color: #4CAF50; 
     color: white;
