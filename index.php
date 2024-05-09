@@ -70,6 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
             </form>
             <a href="http://95.213.139.91/MyForm/form.php"><button>Я новый пользователь</button></a>
+            <a href="http://95.213.139.91/MyForm/lengStatus.php"><button>Посмотреть статичтику</button></a>
         </div>
     </div>
 </body>
