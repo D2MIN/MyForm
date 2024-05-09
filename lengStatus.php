@@ -6,9 +6,16 @@
     }
     mysqli_set_charset($db, 'utf8');
 
-    $result = $db->query("SELECT count(*) FROM user_lengs WHERE leng_id = 7");
-    $row = $result->fetch_assoc();
-    echo $row["count(*)"];
+    $lengs = [];
+    for($i = 0; $i <= 11; $i++){
+        $result = $db->query("SELECT count(*) as leng FROM user_lengs WHERE leng_id = '$i'");
+        $row = $result->fetch_assoc();
+        $lengs[$i] =  $row['leng'];
+    }
+
+    for($i = 0; $i <= 11; $i++){
+        print($lengs[$i]);
+    }
 
     // $lengs = array(
     //     "1" => 0,
