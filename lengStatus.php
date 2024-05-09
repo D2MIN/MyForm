@@ -7,7 +7,7 @@
     mysqli_set_charset($db, 'utf8');
 
     $countLeng = [];
-    for($i = 0; $i <= 11; $i++){
+    for($i = 1; $i <= 11; $i++){
         $result = $db->query("SELECT count(*) as leng FROM user_lengs WHERE leng_id = '$i'");
         $row = $result->fetch_assoc();
         $countLeng[$i] =  $row['leng'];
