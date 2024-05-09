@@ -8,7 +8,8 @@
 
     $result = $db->query("SELECT count(*) FROM user_lengs WHERE leng_id = 7");
     $row = $result->fetch_assoc();
-    echo $row;
+    echo $row[0];
+    // echo $row[1];
 
     // $lengs = array(
     //     "1" => 0,
