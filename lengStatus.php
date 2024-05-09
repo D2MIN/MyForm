@@ -7,7 +7,8 @@
     mysqli_set_charset($db, 'utf8');
 
     $result = $db->query("SELECT count(*) FROM user_lengs WHERE leng_id = 7");
-    // echo $result;
+    $row = $result->fetch_assoc();
+    echo $row;
 
     // $lengs = array(
     //     "1" => 0,
