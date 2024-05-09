@@ -6,30 +6,28 @@
     }
     mysqli_set_charset($db, 'utf8');
 
-    $lengs = [];
+    $countLeng = [];
     for($i = 0; $i <= 11; $i++){
         $result = $db->query("SELECT count(*) as leng FROM user_lengs WHERE leng_id = '$i'");
         $row = $result->fetch_assoc();
-        $lengs[$i] =  $row['leng'];
+        $countLeng[$i] =  $row['leng'];
     }
 
-    for($i = 0; $i <= 11; $i++){
-        print($lengs[$i]);
-    }
+    $lengs = array(
+        "Pascal" => $countLeng[0],
+        "C" => $countLeng[1],
+        "C++" => $countLeng[2],
+        "JavaScript" => $countLeng[3],
+        "Php" => $countLeng[4],
+        "Python" => $countLeng[5],
+        "Java" => $countLeng[6],
+        "Haskel" => $countLeng[7],
+        "Clojure" => $countLeng[8],
+        "Prolog" => $countLeng[9],
+        "Scarse" => $countLeng[10],
+    );
 
-    // $lengs = array(
-    //     "1" => 0,
-    //     "2" => 0,
-    //     "3" => 0,
-    //     "4" => 0,
-    //     "5" => 0,
-    //     "6" => 0,
-    //     "7" => 0,
-    //     "8" => 0,
-    //     "9" => 0,
-    //     "10" => 0,
-    //     "11" => 0,
-    // );
+    // header("Location: lengStatus.php$")
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +40,20 @@
 <body>
     <div class="statusContent">
         <div class="inputStatus">
-            <h1>Hello php site</h1>
+            <h1>Статистика:</h1>
+            <div class="lengs">
+                <h4>Pascal : <?php echo $lengs['Pascal']?></h4>
+                <h4>C : <?php echo $lengs['C']?></h4>
+                <h4>C++ : <?php echo $lengs['C++']?></h4>
+                <h4>JavaScript : <?php echo $lengs['JavaScript']?></h4>
+                <h4>Php : <?php echo $lengs['Php']?></h4>
+                <h4>Python : <?php echo $lengs['Python']?></h4>
+                <h4>Java : <?php echo $lengs['Java']?></h4>
+                <h4>Haskel : <?php echo $lengs['Haskel']?></h4>
+                <h4>Clojure : <?php echo $lengs['Clojure']?></h4>
+                <h4>Prolog : <?php echo $lengs['Prolog']?></h4>
+                <h4>Scarse : <?php echo $lengs['Scarse']?></h4>
+            </div>
         </div>
     </div>
 </body>
