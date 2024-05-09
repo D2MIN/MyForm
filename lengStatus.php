@@ -1,13 +1,13 @@
 <?php
     // Conected to BD
-    $db = mysqli_connect('localhost', 'd2min', 'Qwerty40982', 'Form');
-    if (!$db) {
-        die('Error connecting to database: ' . mysqli_connect_error());
-    }
-    mysqli_set_charset($db, 'utf8');
+    // $db = mysqli_connect('localhost', 'd2min', 'Qwerty40982', 'Form');
+    // if (!$db) {
+    //     die('Error connecting to database: ' . mysqli_connect_error());
+    // }
+    // mysqli_set_charset($db, 'utf8');
 
-    $result = $db->qery("select count(*) from user_lengs where leng_id = 7");
-    echo $result;
+    // $result = $db->qery("select count(*) from user_lengs where leng_id = 7");
+    // echo $result;
 
     // $lengs = array(
     //     "1" => 0,
@@ -34,7 +34,7 @@
 <body>
     <div class="statusContent">
         <div class="inputStatus">
-
+            <h1>Hello php site</h1>
         </div>
     </div>
 </body>
