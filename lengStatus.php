@@ -10,7 +10,7 @@
     for($i = 1; $i <= 11; $i++){
         $result = $db->query("SELECT count(*) as leng FROM user_lengs WHERE leng_id = '$i'");
         $row = $result->fetch_assoc();
-        $countLeng[$i] =  $row['leng'];
+        $countLeng[$i-1] =  $row['leng'];
     }
 
     $lengs = array(
