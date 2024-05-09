@@ -54,6 +54,7 @@
                 <h3>Scarse : <?php echo $lengs['Scarse']?></h3>
             </div>
         </div>
+        <a href="../"><button>Назад</button></a>
     </div>
 </body>
 </html>
