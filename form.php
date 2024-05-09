@@ -148,9 +148,9 @@
                 </div>
             </div>
             <button class="button" type="submit">Отправить</button>
-            <a href="index.php"><button>Назад</button></a>
         </div>
     </form>
+    <a href="index.php"><button>Назад</button></a>
     <!-- <a href="http://95.213.139.91:600/tables"><button class="button" type="submit" disabled >Таблицы</button></a> -->
 </body>
 </html>
