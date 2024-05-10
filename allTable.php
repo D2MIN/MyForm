@@ -26,6 +26,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Tables</title>
+    <link rel="stylesheet" href="../css/allTable.css">
 </head>
 <body>
     <table border="0">
@@ -52,5 +53,6 @@
             }
         ?>
     </table>
+    <a href="index.php"><button>Назад</button></a>
 </body>
 </html>
