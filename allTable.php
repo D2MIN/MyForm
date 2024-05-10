@@ -28,7 +28,7 @@
     <title>All Tables</title>
 </head>
 <body>
-    <table border="1">
+    <table border="0">
         <tr>
             <th>Name</th>
             <th>Number</th>
