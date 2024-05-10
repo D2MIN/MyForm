@@ -37,8 +37,6 @@
             <th>Date</th>
             <th>Gender</th>
             <th>About</th>
-            <button>Изменить</button>
-            <button>Удалить</button>
         </tr>
         <?php
             while($row = $result->fetch_assoc()){
@@ -55,6 +53,11 @@
             }
         ?>
     </table>
+    <div>
+        <input type="text" placeholder="id">
+        <button>Изменить</button>
+        <button>Удалить</button>
+    </div>
     <a href="http://95.213.139.91/MyForm/lengStatus.php"><button>Посмотреть статиcтику</button></a>
     <a href="index.php"><button>Назад</button></a>
 </body>
