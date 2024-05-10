@@ -7,9 +7,12 @@
     // $row = $result->fetch_assoc();
     while ($row = $result->fetch_assoc()) {
         echo '<tr>';
-        echo '<td>' . $row['column_name1'] . '</td>';
-        echo '<td>' . $row['column_name2'] . '</td>';
-        echo '<td>' . $row['column_name3'] . '</td>';
+        echo '<td>' . $row['name'] . '</td>';
+        echo '<td>' . $row['number'] . '</td>';
+        echo '<td>' . $row['mail'] . '</td>';
+        echo '<td>' . $row['date'] . '</td>';
+        echo '<td>' . $row['gen'] . '</td>';
+        echo '<td>' . $row['about'] . '</td>';
         echo '</tr>';
     }
 
