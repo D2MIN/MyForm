@@ -33,10 +33,10 @@
         <tr>
             <th>Name</th>
             <th>Number</th>
-            <th>mail</th>
-            <th>date</th>
-            <th>gen</th>
-            <th>about</th>
+            <th>Mail</th>
+            <th>Date</th>
+            <th>Gender</th>
+            <th>About</th>
         </tr>
         <?php
             while($row = $result->fetch_assoc()){
