@@ -28,6 +28,11 @@
     <title>All Tables</title>
 </head>
 <body>
+    <th>
+        <td>Pidora</td>
+        <td>Pidora</td>
+        <td>Pidora</td>
+    </th>
     <tr>
         <td>HEllo</td>
         <td>World</td>
