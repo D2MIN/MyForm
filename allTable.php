@@ -4,7 +4,7 @@
         die('Error connecting to database: ' . mysqli_connect_error());
     }
     $result = $db->query("SELECT * FROM users");
-    $row = $result->fetch_assoc();
+    // $row = $result->fetch_assoc();
 
     // while ($row = $result->fetch_assoc()) {
     //     echo '<tr>';
@@ -30,17 +30,27 @@
 <body>
     <table border="1">
         <tr>
-            <th>Header 1</th>
-            <th>Header 2</th>
+            <th>Name</th>
+            <th>Number</th>
+            <th>mail</th>
+            <th>date</th>
+            <th>gen</th>
+            <th>about</th>
         </tr>
-        <tr>
-            <td>Row 1, Cell 1</td>
-            <td>Row 1, Cell 2</td>
-        </tr>
-        <tr>
-            <td>Row 2, Cell 1</td>
-            <td>Row 2, Cell 2</td>
-        </tr>
+        <?php
+            while($row = $result->fetch_assoc()){
+                print(
+                    "<tr>
+                        <td>". $row['name'] ."</td>
+                        <td>". $row['number'] ."</td>
+                        <td>". $row['mail'] ."</td>
+                        <td>". $row['date'] ."</td>
+                        <td>". $row['gen'] ."</td>
+                        <td>". $row['about'] ."</td>
+                    </tr>"
+                );
+            }
+        ?>
     </table>
 </body>
 </html>
