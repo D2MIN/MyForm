@@ -37,6 +37,8 @@
             <th>Date</th>
             <th>Gender</th>
             <th>About</th>
+            <button>Изменить</button>
+            <button>Удалить</button>
         </tr>
         <?php
             while($row = $result->fetch_assoc()){
@@ -48,9 +50,7 @@
                         <td>". $row['date'] ."</td>
                         <td>". $row['gen'] ."</td>
                         <td>". $row['about'] ."</td>
-                        <button>Изменить</button>
-                        <button>Удалить</button>
-                    </tr>".
+                        </tr>".
                 );
             }
         ?>
