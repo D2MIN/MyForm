@@ -28,15 +28,19 @@
     <title>All Tables</title>
 </head>
 <body>
-    <th>
-        <td>Pidora</td>
-        <td>Pidora</td>
-        <td>Pidora</td>
-    </th>
-    <tr>
-        <td>HEllo</td>
-        <td>World</td>
-        <td>Fuckers</td>
-    </tr>
+    <table border="1">
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+        </tr>
+        <tr>
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+        </tr>
+        <tr>
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+        </tr>
+    </table>
 </body>
 </html>
