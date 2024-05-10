@@ -36,7 +36,8 @@ button:hover {
 }
 
 table{
-    font-size: 30px;
+    font-size: 20px;
+    text-align: center;
     th{
         border-bottom: 2px solid black;
     }
