@@ -24,6 +24,6 @@
     <title>All Tables</title>
 </head>
 <body>
-    
+    <h1>Empty Project</h1>
 </body>
 </html>
