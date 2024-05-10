@@ -4,8 +4,8 @@
         die('Error connecting to database: ' . mysqli_connect_error());
     }
     $result = $db->query("SELECT * FROM users");
-    // $row = mysqli_fethc_assoc($result);
-    while ($row = mysqli_fetch_assoc($result)) {
+    // $row = $result->fetch_assoc();
+    while ($row = $result->fetch_assoc();) {
         echo '<tr>';
         echo '<td>' . $row['column_name1'] . '</td>';
         echo '<td>' . $row['column_name2'] . '</td>';
