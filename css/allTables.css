@@ -34,3 +34,14 @@ button{
 button:hover {
     background-color: #3e8e41; 
 }
+
+table{
+    font-size: 30px;
+    th{
+        border-bottom: 2px solid black;
+    }
+    td{
+        border-bottom: 2px solid black;
+        margin: 20px;
+    }
+}
