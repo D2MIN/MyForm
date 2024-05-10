@@ -5,7 +5,7 @@
     }
     $result = $db->query("SELECT * FROM users");
     // $row = $result->fetch_assoc();
-    while ($row = $result->fetch_assoc();) {
+    while ($row = $result->fetch_assoc()) {
         echo '<tr>';
         echo '<td>' . $row['column_name1'] . '</td>';
         echo '<td>' . $row['column_name2'] . '</td>';
