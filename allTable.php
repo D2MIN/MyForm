@@ -48,8 +48,9 @@
                         <td>". $row['date'] ."</td>
                         <td>". $row['gen'] ."</td>
                         <td>". $row['about'] ."</td>
+                        <button>Изменить</button>
+                        <button>Удалить</button>
                     </tr>".
-                    "<button>Изменить</button>"."<button>Удалить</button>"
                 );
             }
         ?>
