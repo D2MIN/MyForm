@@ -53,6 +53,7 @@
             }
         ?>
     </table>
+    <a href="http://95.213.139.91/MyForm/lengStatus.php"><button>Посмотреть статиcтику</button></a>
     <a href="index.php"><button>Назад</button></a>
 </body>
 </html>

@@ -53,7 +53,7 @@
                 <h2>Prolog : <?php echo $lengs['Prolog']?></h2>
                 <h2>Scarse : <?php echo $lengs['Scarse']?></h2>
             </div>
-            <a href="index.php"><button>Назад</button></a>
+            <a href="allTable.php"><button>Назад</button></a>
         </div>
     </div>
 </body>
