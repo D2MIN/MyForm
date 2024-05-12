@@ -48,8 +48,8 @@
     </table>
     <div>
         <input type="text" placeholder="id">
-        <button id="change" >Изменить</button>
-        <button id="delete" >Удалить</button>
+        <button class="change" >Изменить</button>
+        <button class="delete" >Удалить</button>
     </div>
     <a href="http://95.213.139.91/MyForm/lengStatus.php"><button>Посмотреть статиcтику</button></a>
     <a href="logout.php"><button name="exit" type="submit">Выход</button><a/>
