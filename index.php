@@ -69,8 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <button>Вход</button>
                 </div>
             </form>
-            <a href="http://95.213.139.91/MyForm/form.php"><button>Я новый пользователь</button></a>
-            <a href="http://95.213.139.91/MyForm/allTable.php"><button>Посмотреть таблицу</button></a>
+            <a href="http://95.213.139.91/MyForm/admin.php"><button>Войти как администратор</button></a>
         </div>
     </div>
 </body>
