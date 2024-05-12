@@ -8,8 +8,7 @@ if ($_SERVER['PHP_AUTH_USER'] != $login || $_SERVER['PHP_AUTH_PW'] != $password)
     die("Пожалуйста введите свой логин и пароль");
 }
 else{
-    echo '<a href="http://95.213.139.91/MyForm/form.php"><button>Я новый пользователь</button></a>';
-    echo '<a href="http://95.213.139.91/MyForm/allTable.php"><button>Посмотреть таблицу</button></a>';
+    header("Location:allTable.php")
+    // echo '<a href="http://95.213.139.91/MyForm/allTable.php"><button>Посмотреть таблицу</button></a>';
 }
-
 ?>
