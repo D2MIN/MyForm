@@ -1,7 +1,7 @@
 console.log("Hello admin");
 
-let chBtn = document.getElementsByClassName("change");
-let dlBtn = document.getElementsByClassName("delete");
+let chBtn = document.getElementsByClassName("change").value;
+let dlBtn = document.getElementsByClassName("delete").value;
 
 console.log(chBtn.value);
 console.log(dlBtn);
