@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Tables</title>
     <link rel="stylesheet" href="css/allTables.css">
-    <script src="admin.js"></script>
+    <script src="admin.js" defer></script>
 </head>
 <body>
     <table border="0">
