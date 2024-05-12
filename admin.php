@@ -9,8 +9,8 @@ if ($_SERVER['PHP_AUTH_USER'] != $login || $_SERVER['PHP_AUTH_PW'] != $password)
 }
 else{
     sesion_start();
-    $_SESSION['admin'] = 'true';
-    header("Location:allTable.php");
+    $_SESSION['admin'] = "true";
+    header("Location: allTable.php");
     // echo '<a href="http://95.213.139.91/MyForm/allTable.php"><button>Посмотреть таблицу</button></a>';
 }
 ?>
