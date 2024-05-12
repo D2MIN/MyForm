@@ -31,8 +31,7 @@ else{
                     <th>Date</th>
                     <th>Gender</th>
                     <th>About</th>
-                </tr>
-                <?php
+                </tr>'
                     while($row = $result->fetch_assoc()){
                         print(
                             "<tr>
@@ -45,8 +44,7 @@ else{
                             </tr>"
                         );
                     }
-                ?>
-            </table>
+            '</table>
             <div>
                 <input type="text" placeholder="id">
                 <button>Изменить</button>
