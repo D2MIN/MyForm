@@ -4,19 +4,6 @@
         die('Error connecting to database: ' . mysqli_connect_error());
     }
     $result = $db->query("SELECT * FROM users");
-    // $row = $result->fetch_assoc();
-
-    // while ($row = $result->fetch_assoc()) {
-    //     echo '<tr>';
-    //     echo '<td>' . $row['name'] . '</td>';
-    //     echo '<td>' . $row['number'] . '</td>';
-    //     echo '<td>' . $row['mail'] . '</td>';
-    //     echo '<td>' . $row['date'] . '</td>';
-    //     echo '<td>' . $row['gen'] . '</td>';
-    //     echo '<td>' . $row['about'] . '</td>';
-    //     echo '</tr>';
-    // }
-
 ?>
 
 
