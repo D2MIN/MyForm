@@ -1,8 +1,8 @@
 <?php
-    // sesion_start();
-    // if(empty($_SESSION['admin'])){
-    //     header('Location: index.php');
-    // }
+    session_start();
+    if(empty($_SESSION['admin']) || $_SESSION['admin'] != "True"){
+        header('Location: index.php');
+    }
 
     $db = mysqli_connect('localhost', 'd2min', 'Qwerty40982', 'Form');
     if (!$db) {
