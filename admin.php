@@ -15,7 +15,7 @@ $digest = trim($data[1]);
 $expected = md5($password . md5($_SERVER['REQUEST_METHOD'] . ':' . $data[2]));
 
 if ($digest != $expected) {
-    header('Location : admin.php');
+    header('Location:./admin.php');
     exit;
 }
 
