@@ -1,5 +1,5 @@
 <?php
-    start_session();
+    sesion_start();
     if(empty($_SESSION['admin'])){
         header('Location:index.php');
     }
