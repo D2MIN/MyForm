@@ -1,6 +1,4 @@
 <?php
-header('WWW-Authenticate: Basic realm="Restricted Area"');
-header('HTTP/1.0 401 Unauthorized');
 $login = 'admin';
 $password = 'secret';
 
