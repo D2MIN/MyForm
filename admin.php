@@ -8,8 +8,8 @@ if ($_SERVER['PHP_AUTH_USER'] != $login || $_SERVER['PHP_AUTH_PW'] != $password)
     die("Пожалуйста введите свой логин и пароль");
 }
 else{
-    sesion_start();
-    $_SESSION['admin'] = "true";
+    // sesion_start();
+    // $_SESSION['admin'] = "true";
     header("Location: allTable.php");
 }
 ?>
