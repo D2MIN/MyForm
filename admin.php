@@ -21,6 +21,6 @@ if ($digest != $expected) {
 
 // Авторизация пройдена успешно
 echo 'Welcome, ' . $user;
-echo '<a href="http://95.213.139.91/MyForm/form.php"><button>Я новый пользователь</button></a>'
-echo '<a href="http://95.213.139.91/MyForm/allTable.php"><button>Посмотреть таблицу</button></a>'
+// echo '<a href="http://95.213.139.91/MyForm/form.php"><button>Я новый пользователь</button></a>'
+// echo '<a href="http://95.213.139.91/MyForm/allTable.php"><button>Посмотреть таблицу</button></a>'
 ?>
