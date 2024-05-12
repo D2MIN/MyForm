@@ -1,26 +1,15 @@
 <?php
-$realm = 'Restricted area';
-$user = 'admin';
+$login = 'admin';
 $password = 'secret';
 
-if (!isset($_SERVER['PHP_AUTH_DIGEST'])) {
-    header('HTTP/1.1 401 Unauthorized');
-    header('WWW-Authenticate: Digest realm="' . $realm . '", qop="md5", nonce="' . md5(time()) . '", opaque="' . md5($realm) . '"');
-    exit;
+if ($_SERVER['PHP_AUTH_USER'] != $login || $_SERVER['PHP_AUTH_PW'] != $password){
+    header('WWW-Authenticate: Basic realm="Restricted Area"');
+    header('HTTP/1.0 401 Unauthorized');
+    die("Пожалуйста введите свой логин и пароль");
+}
+else{
+    echo '<a href="http://95.213.139.91/MyForm/form.php"><button>Я новый пользователь</button></a>';
+    echo '<a href="http://95.213.139.91/MyForm/allTable.php"><button>Посмотреть таблицу</button></a>';
 }
 
-$data = explode(',', $_SERVER['HTTP_AUTHORIZATION']);
-$digest = trim($data[1]);
-
-$expected = md5($password . md5($_SERVER['REQUEST_METHOD'] . ':' . $data[2]));
-
-if ($digest != $expected) {
-    header('Location:admin.php');
-    exit;
-}
-
-// Авторизация пройдена успешно
-echo 'Welcome, ' . $user;
-// echo '<a href="http://95.213.139.91/MyForm/form.php"><button>Я новый пользователь</button></a>'
-// echo '<a href="http://95.213.139.91/MyForm/allTable.php"><button>Посмотреть таблицу</button></a>'
 ?>
