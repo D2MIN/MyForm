@@ -4,6 +4,6 @@ let chBtn = document.getElementById("change");
 let dlBtn = document.getElementById("delete");
 
 chBtn.onclick = function() {
-    window.location.href = 'index.php';
     console.log("ch");
+    window.location.href = 'index.php';
 };
