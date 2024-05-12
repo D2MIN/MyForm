@@ -19,6 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Tables</title>
     <link rel="stylesheet" href="css/allTables.css">
+    <script src="admin.js" defer></script>
 </head>
 <body>
     <table border="0">
@@ -47,11 +48,10 @@
     </table>
     <div>
         <input type="text" placeholder="id">
-        <button class="change" >Изменить</button>
-        <button class="delete" >Удалить</button>
+        <button id="change" >Изменить</button>
+        <button id="delete" >Удалить</button>
     </div>
     <a href="http://95.213.139.91/MyForm/lengStatus.php"><button>Посмотреть статиcтику</button></a>
     <a href="logout.php"><button name="exit" type="submit">Выход</button><a/>
 </body>
-<script src="admin.js" defer></script>
 </html>
