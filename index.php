@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $about = $row['about'];
     $pass = $row['pass'];
     
-    print($pass.$password);
+    header("Location:index.php?answer=".$pass);
     if($password == $pass){
         setcookie("nameC", $name, time()+5000,"/");
         setcookie("numberC", $number, time()+5000,"/");
