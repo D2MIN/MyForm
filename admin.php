@@ -10,7 +10,7 @@ $auth = $_SERVER['HTTP_AUTHORIZATION'];
 $auth = base64_decode(substr($auth, 6));
 list($username, $password) = explode(':', $auth);
 
-$result = $db->query("SELECT * FROM users WHERE id = '$id'");
+$result = $db->query("SELECT * FROM users WHERE id = '$username'");
 $row = $result->fetch_assoc();
 $login = $row['login'];
 $password = $row['pass'];
