@@ -24,8 +24,6 @@ if ($_SERVER['PHP_AUTH_USER'] != "" || $_SERVER['PHP_AUTH_PW'] != ""){
         die("Пожалуйста введите свой логин и пароль");
     }
     else{
-        $_SERVER['PHP_AUTH_USER'] = "";
-        $_SERVER['PHP_AUTH_PW'] = "";
         $flag = "True";
         session_start();
         $_SESSION['admin'] = $flag;
