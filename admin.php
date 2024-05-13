@@ -9,9 +9,8 @@ mysqli_set_charset($db, 'utf8');
 if ($_SERVER['PHP_AUTH_USER'] != "" && $_SERVER['PHP_AUTH_PW'] != ""){
 
     // Получаем имя пользователя и пароль из заголовка Authorization
-    $auth = $_SERVER['HTTP_AUTHORIZATION'];
-    $auth = base64_decode(substr($auth, 6));
-    list($username, $pass) = explode(':', $auth);
+    $username = $_SERVER['PHP_AUTH_USER'];
+    $pass = $_SERVER['PHP_AUTH_PW'];
 
     $result = $db->query("SELECT * FROM admins WHERE login = '$username'");
     $row = $result->fetch_assoc();
