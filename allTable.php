@@ -54,6 +54,6 @@
         <button id="delete" >Удалить</button>
     </div>
     <a href="http://95.213.139.91/MyForm/lengStatus.php"><button>Посмотреть статиcтику</button></a>
-    <a href="logout.php"><button name="exit" type="submit">Выход</button><a/>
+    <button id="exit" name="exit" type="submit">Выход</button>
 </body>
 </html>
