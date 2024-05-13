@@ -47,7 +47,7 @@
         ?>
     </table>
     <div>
-        <input type="text" placeholder="id">
+        <input id="id" type="text" placeholder="id">
         <button id="change" >Изменить</button>
         <button id="delete" >Удалить</button>
     </div>
