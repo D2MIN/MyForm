@@ -3,7 +3,7 @@ console.log("Hello admin");
 let chBtn = document.getElementById("change");
 let dlBtn = document.getElementById("delete");
 
-let id = document.getElementById("id");
+let id = document.getElementById("id").value;
 
 chBtn.onclick = function() {
     window.location.href = 'adminChange.php?id='+id;
