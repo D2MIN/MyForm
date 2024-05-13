@@ -19,7 +19,7 @@ $password = $row['pass'];
 if ($_SERVER['PHP_AUTH_USER'] != $login || $_SERVER['PHP_AUTH_PW'] != $password || $_SERVER['PHP_AUTH_USER'] == "" || $_SERVER['PHP_AUTH_PW'] == ""){
     header('WWW-Authenticate: Basic realm="Restricted Area"');
     header('HTTP/1.0 401 Unauthorized');
-    die("Пожалуйста введите свой логин и пароль".$login.$password);
+    die("Пожалуйста введите свой логин и пароль".$username.$pass);
 }
 else{
     $flag = "True";
