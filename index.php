@@ -2,17 +2,17 @@
 $answer = $_GET["answer"];
 
 session_start();
-if(isset($_SESSION['id'])) {
-    header("Location: change.php"); // перенаправление на страницу личного кабинета
-    exit();
-}
+// if(isset($_SESSION['id'])) {
+//     header("Location: change.php"); // перенаправление на страницу личного кабинета
+//     exit();
+// }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $login = $_POST["login"];
     $password = $_POST["password"];
-    if(!empty($_SESSION['id'])){
-        header("Location:change.php?"."&id=".$_SESSION['id']);
-    }
+    // if(!empty($_SESSION['id'])){
+    //     header("Location:change.php?"."&id=".$_SESSION['id']);
+    // }
     
     
     // Подключение к базе данных
