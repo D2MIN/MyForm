@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $about = $row['about'];
     $pass = $row['pass'];
     
-    header("Location:index.php?answer=".$pass);
+    // header("Location:index.php?answer=".$pass);
     if($password == $pass){
         setcookie("nameC", $name, time()+5000,"/");
         setcookie("numberC", $number, time()+5000,"/");
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         setcookie("aboutC", $about, time()+5000,"/");
         // Использование данных из сессии
         $_SESSION['id'] = $id;
-        // header("Location:change.php?");
+        header("Location:change.php?");
     }else{
         $answer = "Неправильный пароль";
         // header("Location:index.php?answer=".$answer);
