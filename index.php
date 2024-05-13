@@ -33,6 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $about = $row['about'];
     $pass = $row['pass'];
     
+    print($pass.$password);
+
     if($password == $pass){
         setcookie("nameC", $name, time()+5000,"/");
         setcookie("numberC", $number, time()+5000,"/");
