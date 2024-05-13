@@ -7,8 +7,11 @@ mysqli_set_charset($db, 'utf8');
 
 $result = $db->query("SELECT * FROM users WHERE id = '$id'");
 $row = $result->fetch_assoc();
-$login = $row['login'];
-$password = $row['pass'];
+// $login = $row['login'];
+// $password = $row['pass'];
+$login = 'login';
+$password = 'pass';
+
 
 if ($_SERVER['PHP_AUTH_USER'] != $login || $_SERVER['PHP_AUTH_PW'] != $password){
     header('WWW-Authenticate: Basic realm="Restricted Area"');
