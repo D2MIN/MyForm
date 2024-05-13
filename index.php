@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Использование данных из сессии
         $_SESSION['id'] = $id;
         print($pass.$password);
-        // header("Location:change.php?");
+        header("Location:change.php?");
     }else{
         $answer = "Неправильный пароль";
         header("Location:index.php?answer=".$answer);
