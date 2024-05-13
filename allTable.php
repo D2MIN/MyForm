@@ -30,11 +30,13 @@
             <th>Date</th>
             <th>Gender</th>
             <th>About</th>
+            <th>id</th>
         </tr>
         <?php
             while($row = $result->fetch_assoc()){
                 print(
                     "<tr>
+                        <td>". $row['id'] ."</td>
                         <td>". $row['name'] ."</td>
                         <td>". $row['number'] ."</td>
                         <td>". $row['mail'] ."</td>
