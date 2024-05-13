@@ -24,13 +24,13 @@
 <body>
     <table border="0">
         <tr>
+            <th>id</th>
             <th>Name</th>
             <th>Number</th>
             <th>Mail</th>
             <th>Date</th>
             <th>Gender</th>
             <th>About</th>
-            <th>id</th>
         </tr>
         <?php
             while($row = $result->fetch_assoc()){

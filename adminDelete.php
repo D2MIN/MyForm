@@ -13,5 +13,5 @@
 
     $db->query("DELETE FROM users WHERE id = '$id'");
 
-    header("Location: admin.php")
+    header("Location: admin.php");
 ?>
