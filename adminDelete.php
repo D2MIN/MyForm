@@ -1,7 +1,7 @@
 <?php 
     $id = $_GET['id'];
     session_start();
-    if(empty($_SESSION['admin'] || $_SESSION['admin'] == "True")){
+    if(empty($_SESSION['admin'] || $_SESSION['admin'] != "True")){
         header("Location: index.php");
     }
 
@@ -11,7 +11,7 @@
     }
     mysqli_set_charset($db, 'utf8');
 
-    $result = $db->query("DELETE FROM users WHERE id = '$id'");
+    $db->query("DELETE FROM users WHERE id = '$id'");
 
     header("Location: admin.php");
 ?>
