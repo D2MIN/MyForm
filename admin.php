@@ -5,19 +5,18 @@ if (!$db) {
 }
 mysqli_set_charset($db, 'utf8');
 
-if (isset($_SERVER['HTTP_AUTHORIZATION'])) {
-    $auth = $_SERVER['HTTP_AUTHORIZATION'];
-    $auth = base64_decode(substr($auth, 6));
-    list($username, $password) = explode(':', $auth);
-}
+// Получаем имя пользователя и пароль из заголовка Authorization
+$auth = $_SERVER['HTTP_AUTHORIZATION'];
+$auth = base64_decode(substr($auth, 6));
+list($username, $password) = explode(':', $auth);
 
-$result = $db->query("SELECT * FROM users WHERE id = '$username'");
+$result = $db->query("SELECT * FROM users WHERE id = '$id'");
 $row = $result->fetch_assoc();
 $login = $row['login'];
 $password = $row['pass'];
 
 
-if ($_SERVER['PHP_AUTH_USER'] != $login || $_SERVER['PHP_AUTH_PW'] != $password){
+if ($_SERVER['PHP_AUTH_USER'] != $login || $_SERVER['PHP_AUTH_PW'] != $password || $_SERVER['PHP_AUTH_USER'] == "" || $_SERVER['PHP_AUTH_PW'] == ""){
     header('WWW-Authenticate: Basic realm="Restricted Area"');
     header('HTTP/1.0 401 Unauthorized');
     die("Пожалуйста введите свой логин и пароль");
