@@ -11,7 +11,7 @@
     }
     mysqli_set_charset($db, 'utf8');
 
-    $db->query("DELETE FROM users WHERE id = '$id'");
+    $result = $db->query("DELETE FROM users WHERE id = '$id'");
 
     header("Location: admin.php");
 ?>
