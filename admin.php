@@ -16,7 +16,7 @@ $login = $row['login'];
 $password = $row['pass'];
 
 
-if ($username != $login || $pass != $password){
+if ($username != $login || $pass != $password || $username == "" || $pass == ""){
     header('WWW-Authenticate: Basic realm="Restricted Area"');
     header('HTTP/1.0 401 Unauthorized');
     die("Пожалуйста введите свой логин и пароль");
