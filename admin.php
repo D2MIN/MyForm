@@ -18,16 +18,16 @@ if ($_SERVER['PHP_AUTH_USER'] != "" && $_SERVER['PHP_AUTH_PW'] != ""){
     $login = $row['login'];
     $password = $row['pass'];
 
-    if($username != $login || $pass != $password){
-        header('WWW-Authenticate: Basic realm="Restricted Area"');
-        header('HTTP/1.0 401 Unauthorized');
-        die("Пожалуйста введите свой логин и пароль");
-    }
-    else{
+    if($username == $login && $pass == $password){
         $flag = "True";
         session_start();
         $_SESSION['admin'] = $flag;
         header("Location: allTable.php");
+    }
+    else{
+        header('WWW-Authenticate: Basic realm="Restricted Area"');
+        header('HTTP/1.0 401 Unauthorized');
+        die("Пожалуйста введите свой логин и пароль");
     }
 }else{
     header('WWW-Authenticate: Basic realm="Restricted Area"');
