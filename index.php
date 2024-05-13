@@ -2,7 +2,7 @@
 $answer = $_GET["answer"];
 
 session_start();
-if(isset($_SESSION['uid'])) {
+if(isset($_SESSION['id'])) {
     header("Location: change.php"); // перенаправление на страницу личного кабинета
     exit();
 }
@@ -10,8 +10,8 @@ if(isset($_SESSION['uid'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $login = $_POST["login"];
     $password = $_POST["password"];
-    if(!empty($_SESSION['uid'])){
-        header("Location:change.php?"."&id=".$_SESSION['uid']);
+    if(!empty($_SESSION['id'])){
+        header("Location:change.php?"."&id=".$_SESSION['id']);
     }
     
     
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         setcookie("dateC", $date, time()+5000,"/");
         setcookie("aboutC", $about, time()+5000,"/");
         // Использование данных из сессии
-        $_SESSION['uid'] = $id;
+        $_SESSION['id'] = $id;
         header("Location:change.php?");
     }else{
         $answer = "Неправильный пароль";
