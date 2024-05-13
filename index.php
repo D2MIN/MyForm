@@ -2,10 +2,10 @@
 $answer = $_GET["answer"];
 
 session_start();
-// if(isset($_SESSION['id'])) {
-//     header("Location: change.php"); // перенаправление на страницу личного кабинета
-//     exit();
-// }
+if(isset($_SESSION['id'])) {
+    header("Location: change.php"); // перенаправление на страницу личного кабинета
+    exit();
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $login = $_POST["login"];
@@ -37,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         setcookie("aboutC", $about, time()+5000,"/");
         // Использование данных из сессии
         $_SESSION['id'] = $id;
-        header("Location:index.php?login=".$login);
-        // header("Location:change.php?");
+        // header("Location:index.php?login=".$login);
+        header("Location:change.php?");
     }else{
         $answer = "Неправильный пароль";
         header("Location:index.php?answer=".$answer);
@@ -60,8 +60,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <h1>Войдите что бы менять таблицу</h1>
             <p class="error"><?php echo $answer; ?></p>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" >
-                <input id="login" type="text" placeholder="Login">
-                <input id="password" type="password" placeholder="Password">
+                <input name="login" type="text" placeholder="Login">
+                <input name="password" type="password" placeholder="Password">
                 <div class="buttons">
                     <button>Вход</button>
                 </div>
