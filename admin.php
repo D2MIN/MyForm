@@ -11,6 +11,9 @@ $auth = base64_decode(substr($auth, 6));
 list($username, $pass) = explode(':', $auth);
 
 $result = $db->query("SELECT * FROM admins WHERE login = '$username'");
+if (!$db) {
+    die('Error connecting to database: ' . mysqli_connect_error());
+}
 $row = $result->fetch_assoc();
 $login = $row['login'];
 $password = $row['pass'];
