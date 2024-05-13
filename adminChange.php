@@ -1,7 +1,7 @@
 <?php 
     $id = $_GET['id'];
     session_start();
-    if(empty($_SESSION['admin'] || $_SESSION['admin'] == "True")){
+    if(empty($_SESSION['admin']) || $_SESSION['admin'] == "True"){
         header("Location: index.php");
     }
 
