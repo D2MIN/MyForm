@@ -6,7 +6,7 @@ if (!$db) {
 mysqli_set_charset($db, 'utf8');
 
 
-if ($_SERVER['PHP_AUTH_USER'] != "" || $_SERVER['PHP_AUTH_PW'] != ""){
+if ($_SERVER['PHP_AUTH_USER'] != "" && $_SERVER['PHP_AUTH_PW'] != ""){
 
     // Получаем имя пользователя и пароль из заголовка Authorization
     $auth = $_SERVER['HTTP_AUTHORIZATION'];
