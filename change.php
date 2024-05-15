@@ -1,12 +1,10 @@
 <?php
     $answer = $_GET['answer'];
 
-    $user_L = 'd2min';
-    $user_P = 'Qwerty40982';
-    $encodedLogin = base64_encode($user_L);
-    $encodedPassword = base64_encode($user_P);
-    print($encodedLogin." ".$encodedPassword);
-    // $decoded = base64_decode($encoded);
+    $content = file("Pop.txt");
+    $decodedLogin = base64_decode($content[0]);
+    $decodedPassword = base64_decode($content[1]);
+    print($decodedLogin." ".$decodedPassword);
 
     session_start();
     if(!isset($_SESSION["id"])){
