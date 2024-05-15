@@ -5,7 +5,7 @@
     $user_P = 'Qwerty40982';
     $encodedLogin = base64_encode($user_L);
     $encodedPassword = base64_encode($user_P);
-    print($encodedLogin,$encodedPassword);
+    print($encodedLogin." ".$encodedPassword);
     // $decoded = base64_decode($encoded);
 
     session_start();
