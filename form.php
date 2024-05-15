@@ -46,15 +46,9 @@
             setcookie("date", $date, time()+5000,"/");
         }
 
-        $matches = 0;
-        preg_match_all('/<script|<?php/',$about,$matches);
-        if(!empty($matches)){
-            $flag = 1;
-            setcookie("about","aboutErr",time()+5000,"/");
-        }else{
-            $safe_str = htmlspecialchars($about, ENT_QUOTES);
-            setcookie("about","",time()-5000,"/");
-        }
+
+        $safe_str = htmlspecialchars($about, ENT_QUOTES);
+
         
         if($flag == 1){
             header("Location: form.php?answer=".$answer);
