@@ -5,7 +5,10 @@
         header("Location: index.php");
     }
 
-    $db = mysqli_connect('localhost', 'd2min', 'Qwerty40982', 'Form');
+    $content = file("Pop.txt");
+    $decodedLogin = base64_decode($content[0]);
+    $decodedPassword = base64_decode($content[1]);
+    $db = mysqli_connect('localhost', $decodedLogin, $decodedPassword, 'Form');
     if (!$db) {
         die('Error connecting to database: ' . mysqli_connect_error());
     }

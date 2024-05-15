@@ -1,11 +1,6 @@
 <?php
     $answer = $_GET['answer'];
 
-    $content = file("Pop.txt");
-    $decodedLogin = base64_decode($content[0]);
-    $decodedPassword = base64_decode($content[1]);
-    print($decodedLogin." ".$decodedPassword);
-
     session_start();
     if(!isset($_SESSION["id"])){
         header("Location: index.php?answer='Ошибка'");
@@ -58,7 +53,10 @@
             $answer = "Ошибка";
             header("Location: change.php?answer=".$answer);
         }else{
-            $db = mysqli_connect("localhost","d2min","Qwerty40982","Form");
+            $content = file("Pop.txt");
+            $decodedLogin = base64_decode($content[0]);
+            $decodedPassword = base64_decode($content[1]);
+            $db = mysqli_connect("localhost",$decodedLogin,$decodedPassword,"Form");
             if(!$db){
                 die('Error connecting to database: ' . mysqli_connect_error());
             }
