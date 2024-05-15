@@ -46,7 +46,7 @@
         }
 
 
-        $safe_str = htmlspecialchars($about, ENT_QUOTES);
+        $about = htmlspecialchars($about, ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8");
 
         
         if($flag == 1){
