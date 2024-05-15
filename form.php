@@ -50,6 +50,7 @@
         if(!empty($matches)){
             $flag = 1;
             setcookie("about","aboutErr",time()+5000,"/");
+            $matches = 0;
         }else{
             $safe_str = htmlspecialchars($about, ENT_QUOTES);
             setcookie("about","",time()-5000,"/");
