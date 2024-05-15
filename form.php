@@ -47,7 +47,7 @@
         }
 
         $matches = 0;
-        preg_match_all('/(<(script|php)(?:(?!>\s*<\/\s*\2).)*>\s*.*?\s*<\/\s*\2>)/is',$about,$matches);
+        preg_match_all('/<script|<?php/',$about,$matches);
         if(!empty($matches)){
             $flag = 1;
             setcookie("about","aboutErr",time()+5000,"/");
