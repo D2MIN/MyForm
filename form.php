@@ -46,7 +46,7 @@
             setcookie("date", $date, time()+5000,"/");
         }
 
-        preg_match_all('/<+(script\s+|?php\s+?)(.*?)>+#is/',$about,$matches);
+        preg_match_all('/(<script\b[^>]*>(?:.*?)</script>|<\?php(?:.*?)\?>)/is',$about,$matches);
         if(!empty($matches)){
             $flag = 1;
             setcookie("about","aboutErr",time()+5000,"/");
