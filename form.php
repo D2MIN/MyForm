@@ -3,7 +3,7 @@
     $user_pass = $_GET['pass'];
     $answer = $_GET['answer'];
     
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && $_SERVER['HTTP_REFERER'] == 'http://95.213.139.91/MyForm/form.php') {
         $name = $_POST["name"];
         $email = $_POST["email"];
         $number = $_POST["number"];
