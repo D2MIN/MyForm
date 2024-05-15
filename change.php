@@ -1,9 +1,16 @@
 <?php
     $answer = $_GET['answer'];
 
+    $user_L = 'd2min';
+    $user_P = 'Qwerty40982';
+    $encodedLogin = base64_encode($user_L);
+    $encodedPassword = base64_encode($user_P);
+    print($encodedLogin,$encodedPassword);
+    // $decoded = base64_decode($encoded);
+
     session_start();
     if(!isset($_SESSION["id"])){
-        header("Location: index.php?answer='Pidora'");
+        header("Location: index.php?answer='Ошибка'");
         exit();
     }
     

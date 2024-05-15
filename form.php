@@ -2,7 +2,6 @@
     $user_login = $_GET['login'];
     $user_pass = $_GET['pass'];
     $answer = $_GET['answer'];
-    $strdate = $_GET["strdate"];
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $_POST["name"];
