@@ -6,8 +6,8 @@
         header("Location: index.php?answer=Ошибка");
         exit();
     }
-    
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && $_SERVER['HTTP_REFERER'] == 'http://95.213.139.91/MyForm/change.php') {
         $name = $_POST["name"];
         $email = $_POST["email"];
         $number = $_POST["number"];
@@ -137,7 +137,7 @@
                     </div>
                     <div class="textarea">
                         <h4>Напишите о себе</h4>
-                        <textarea value="<?php echo $_COOKIE['aboutC'];?>" name="about" cols="30" rows="8" required></textarea>
+                        <textarea name="about" cols="30" rows="8" required><?php echo $_COOKIE['aboutC'];?></textarea>
                     </div>
                     <label>
                         <input class="custom-checkbox" type="checkbox" name="document" id="" required>Я согласен(а) c условиями <pre> </pre> <a href="#"> коденфиденциальности</a>
